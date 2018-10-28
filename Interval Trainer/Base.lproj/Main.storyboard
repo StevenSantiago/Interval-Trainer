@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6ZF-RJ-dTW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="LASER4.TTF">
+            <string>Laserian</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Start Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CreateIntervalTimerVC" id="BYZ-38-t0r" customClass="StartController" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iho-Xf-I8I">
+                                <rect key="frame" x="53.5" y="260.5" width="268" height="146"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAs-E9-Foe">
+                                        <rect key="frame" x="1.5" y="0.0" width="265" height="22"/>
+                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
+                                        <state key="normal" title="Create Interval Trainer">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="CreateIntervalTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PdF-EP-wFd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j6-8K-b9w">
+                                        <rect key="frame" x="71.5" y="62" width="125" height="22"/>
+                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
+                                        <state key="normal" title="Quick Start">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="QuickStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HNG-nh-MQJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ1-LX-kCj">
+                                        <rect key="frame" x="0.0" y="124" width="268" height="22"/>
+                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
+                                        <state key="normal" title="Saved Interval Trainers">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SavedIntervalTimers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KSd-H9-oxr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JJ1-LX-kCj" firstAttribute="centerX" secondItem="iho-Xf-I8I" secondAttribute="centerX" id="INO-Yv-Pl1"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O3-bl-Es3">
+                                <rect key="frame" x="154.5" y="637" width="66" height="20"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
+                                <state key="normal" title="History">
+                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="History:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nSN-Qc-tGn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval Trainer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsU-qu-4ac">
+                                <rect key="frame" x="50.5" y="79" width="274" height="14"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2O3-bl-Es3" secondAttribute="bottom" constant="10" id="Aoe-6O-y40"/>
+                            <constraint firstItem="fsU-qu-4ac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JSU-LI-ORC"/>
+                            <constraint firstItem="fsU-qu-4ac" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="MWc-fA-D2H"/>
+                            <constraint firstItem="2O3-bl-Es3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QSx-Oe-VRT"/>
+                            <constraint firstItem="iho-Xf-I8I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yve-oy-mbe"/>
+                            <constraint firstItem="iho-Xf-I8I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eAn-Ae-2Fm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Na2-rA-YRC"/>
+                    <connections>
+                        <segue destination="PbS-7n-qps" kind="show" identifier="QuickStartVC" id="gvO-qJ-yow"/>
+                        <segue destination="KOX-cM-ASF" kind="show" identifier="CreateIntervalTrainerVC" id="qu0-Qn-faV"/>
+                        <segue destination="zwj-na-m4w" kind="show" identifier="HistoryVC" id="WRi-nB-moz"/>
+                        <segue destination="uYr-82-ATm" kind="show" identifier="SavedIntervalTrainersVC" id="NP8-yc-3HQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="122"/>
+        </scene>
+        <!--QuickStartVC-->
+        <scene sceneID="Hun-xK-nOs">
+            <objects>
+                <viewController storyboardIdentifier="QuickStartVC" title="QuickStartVC" id="PbS-7n-qps" customClass="QuickStartVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Il6-Ms-byq"/>
+                        <viewControllerLayoutGuide type="bottom" id="UKG-V9-HDl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vc5-9R-ds8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quickly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6Z-ye-Dvx">
+                                <rect key="frame" x="148" y="361" width="118" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shl-R7-C61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569" y="150"/>
+        </scene>
+        <!--Saved Interval TrainersVC-->
+        <scene sceneID="Vtu-aR-bxf">
+            <objects>
+                <viewController storyboardIdentifier="SavedIntervalTrainersVC" id="uYr-82-ATm" customClass="SavedIntervalTrainersVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FjP-Ie-prF"/>
+                        <viewControllerLayoutGuide type="bottom" id="RhY-hV-ROz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0cc-Wy-k5U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAVED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLt-7m-0G8">
+                                <rect key="frame" x="101" y="275" width="118" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0P0-JL-Hcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2511" y="1193"/>
+        </scene>
+        <!--HistoryVC-->
+        <scene sceneID="d2v-hT-rCE">
+            <objects>
+                <viewController storyboardIdentifier="HistoryVC" id="zwj-na-m4w" customClass="HistoryVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mtc-4Z-KQz"/>
+                        <viewControllerLayoutGuide type="bottom" id="JY8-Gy-KTT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a5g-UJ-kMN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAB-PC-bdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="-1319"/>
+        </scene>
+        <!--Create Interval TrainerVC-->
+        <scene sceneID="OKP-3B-HMK">
+            <objects>
+                <viewController storyboardIdentifier="CreateIntervalTrainerVC" id="KOX-cM-ASF" customClass="CreateIntervalTrainerVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dVP-oQ-ukJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qZI-KC-cRU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0JR-hP-7cX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Sets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr1-QG-cgL">
+                                <rect key="frame" x="16" y="106" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Active" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-1M-g1f">
+                                <rect key="frame" x="31" y="172" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsR-3J-Vf5">
+                                <rect key="frame" x="31" y="232" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbj-Wc-eQl">
+                                <rect key="frame" x="221" y="101" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="numberOfSets" destination="tbj-Wc-eQl" id="hcm-61-nGY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhG-zU-AsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2509.5999999999999" y="-613.04347826086962"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RdJ-Ya-fht">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ZF-RJ-dTW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tJD-jt-4HW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PEj-Qm-SHA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQA-yI-i7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.25" y="122.53521126760563"/>
+        </scene>
+    </scenes>
+</document>
