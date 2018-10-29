@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0734C06521869BDA00F75226 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734C06421869BDA00F75226 /* Timer.swift */; };
 		07E686331E6A5E8F00B09760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686321E6A5E8F00B09760 /* AppDelegate.swift */; };
 		07E686351E6A5E8F00B09760 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686341E6A5E8F00B09760 /* StartController.swift */; };
 		07E686381E6A5E8F00B09760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E686361E6A5E8F00B09760 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0734C06421869BDA00F75226 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		07E6862F1E6A5E8F00B09760 /* Interval Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E686321E6A5E8F00B09760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E686341E6A5E8F00B09760 /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0734C06621869DD300F75226 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		07E686261E6A5E8E00B09760 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +79,7 @@
 		07E686311E6A5E8F00B09760 /* Interval Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				0734C06621869DD300F75226 /* Services */,
 				07FA145F21858CC00012D190 /* Misc */,
 				07E6864A1E6A661200B09760 /* Controllers */,
 				07E686491E6A660D00B09760 /* Views */,
@@ -96,6 +106,7 @@
 		07E686481E6A660600B09760 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0734C06421869BDA00F75226 /* Timer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 				07E6863B1E6A5E8F00B09760 /* Interval_Trainer.xcdatamodeld in Sources */,
 				07E686501E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift in Sources */,
 				07E6864E1E6ADC1700B09760 /* QuickStartVC.swift in Sources */,
+				0734C06521869BDA00F75226 /* Timer.swift in Sources */,
 				07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */,
 				07FA145C218557DB0012D190 /* Constants.swift in Sources */,
 				07FA145E21855B4B0012D190 /* HistoryVC.swift in Sources */,
