@@ -13,7 +13,7 @@ class QuickStartVC: UIViewController {
     @IBOutlet weak var timerLbl: UILabel!
     
     var timer = Timer()
-    var time = 0.00
+    var time = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,8 @@ class QuickStartVC: UIViewController {
 
   
     @objc func updateTimer(){
-        time = time + 0.01
-        timerLbl.text = String(time)
+        time = time + 0.1
+        timerLbl.text = String(format: "%.1f", time)
     }
     @IBAction func stopTimer(_ sender: Any) {
         timer.invalidate()
@@ -35,6 +35,6 @@ class QuickStartVC: UIViewController {
     }
     
     func setTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
     }
 }
