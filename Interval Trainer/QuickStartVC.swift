@@ -11,6 +11,9 @@ import UIKit
 class QuickStartVC: UIViewController {
 
     @IBOutlet weak var timerLbl: UILabel!
+    @IBOutlet weak var StartResumeBtn: UIButton!
+    @IBOutlet weak var StopBtn: UIButton!
+    @IBOutlet weak var numberOfSets: UILabel!
     
     var timer = Timer()
     var time = 0.0
@@ -18,7 +21,8 @@ class QuickStartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.isHidden = false
-        setTimer()
+        StartResumeBtn.setTitle("START", for: .normal)
+        StartResumeBtn.titleLabel?.sizeToFit()
     }
 
   
@@ -26,12 +30,17 @@ class QuickStartVC: UIViewController {
         time = time + 0.1
         timerLbl.text = String(format: "%.1f", time)
     }
-    @IBAction func stopTimer(_ sender: Any) {
+    @IBAction func stopTimer(_ sender: UIButton) {
         timer.invalidate()
+        sender.isHidden = true
+        StartResumeBtn.isHidden = false
     }
     
-    @IBAction func resumeTimer(_ sender: Any) {
+    @IBAction func resumeTimer(_ sender: UIButton) {
         setTimer()
+        StopBtn.isHidden = false
+        sender.isHidden = true
+        sender.setTitle("RESUME", for: .normal)
     }
     
     func setTimer(){
