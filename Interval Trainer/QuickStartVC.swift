@@ -16,19 +16,36 @@ class QuickStartVC: UIViewController {
     @IBOutlet weak var numberOfSets: UILabel!
     
     var timer = Timer()
-    var time = 0.0
+    var time = 5.0
+    var sets = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.isHidden = false
+        timerLbl.text = String(format: "%.1f", time)
+        numberOfSets.text = String(sets)
         StartResumeBtn.setTitle("START", for: .normal)
         StartResumeBtn.titleLabel?.sizeToFit()
     }
 
   
     @objc func updateTimer(){
-        time = time + 0.1
+        if time > 0.01 && sets >= 1{
+        time = time - 0.1
         timerLbl.text = String(format: "%.1f", time)
+        }
+        else if time <= 0.01 && sets > 0{
+            sets = sets - 1
+            time = 5.0
+            numberOfSets.text = String(sets)
+            timerLbl.text = String(format: "%.1f", time)
+        }
+        else {
+            timer.invalidate()
+            //sender.isHidden = true
+            StartResumeBtn.isHidden = false
+        }
+        
     }
     @IBAction func stopTimer(_ sender: UIButton) {
         timer.invalidate()
