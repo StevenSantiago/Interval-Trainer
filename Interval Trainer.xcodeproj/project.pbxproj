@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0734C06521869BDA00F75226 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734C06421869BDA00F75226 /* Timer.swift */; };
+		07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D1305E2202B30A00D887A8 /* beep-04.wav */; };
+		07D130612202B31100D887A8 /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D130602202B31100D887A8 /* beep-07.wav */; };
 		07E686331E6A5E8F00B09760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686321E6A5E8F00B09760 /* AppDelegate.swift */; };
 		07E686351E6A5E8F00B09760 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686341E6A5E8F00B09760 /* StartController.swift */; };
 		07E686381E6A5E8F00B09760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E686361E6A5E8F00B09760 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		0734C06421869BDA00F75226 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		07D1305E2202B30A00D887A8 /* beep-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-04.wav"; sourceTree = "<group>"; };
+		07D130602202B31100D887A8 /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
 		07E6862F1E6A5E8F00B09760 /* Interval Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E686321E6A5E8F00B09760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E686341E6A5E8F00B09760 /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 		07E686471E6A65FC00B09760 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07D130602202B31100D887A8 /* beep-07.wav */,
+				07D1305E2202B30A00D887A8 /* beep-04.wav */,
 				07E6864B1E6A662400B09760 /* LASER4.TTF */,
 			);
 			name = Resources;
@@ -201,7 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E686401E6A5E8F00B09760 /* LaunchScreen.storyboard in Resources */,
+				07D130612202B31100D887A8 /* beep-07.wav in Resources */,
 				07E6864C1E6A662400B09760 /* LASER4.TTF in Resources */,
+				07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */,
 				07E6863D1E6A5E8F00B09760 /* Assets.xcassets in Resources */,
 				07E686381E6A5E8F00B09760 /* Main.storyboard in Resources */,
 			);
