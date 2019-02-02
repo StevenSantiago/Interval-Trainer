@@ -310,6 +310,7 @@
                                 <state key="normal" title="START"/>
                                 <connections>
                                     <action selector="startTimer:" destination="KOX-cM-ASF" eventType="touchUpInside" id="2wn-5F-Mck"/>
+                                    <segue destination="PCV-Ym-uFn" kind="show" id="pcc-Fm-pbb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -348,6 +349,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQA-yI-i7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116.25" y="122.53521126760563"/>
+        </scene>
+        <!--QuickStartVC-->
+        <scene sceneID="s34-Z3-tTe">
+            <objects>
+                <viewController storyboardIdentifier="QuickStartVC" title="QuickStartVC" id="PCV-Ym-uFn" customClass="QuickStartVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Bq-Vl-heK"/>
+                        <viewControllerLayoutGuide type="bottom" id="dif-pE-ua1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TPi-gk-6cR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-vS-8fS">
+                                <rect key="frame" x="65" y="185" width="250" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfY-D1-V2h">
+                                <rect key="frame" x="138" y="369" width="98" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
+                                <state key="normal" title="STOP"/>
+                                <connections>
+                                    <action selector="stopTimer:" destination="PCV-Ym-uFn" eventType="touchUpInside" id="aS6-d4-RXf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTC-sS-MJd">
+                                <rect key="frame" x="108" y="485" width="165" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="resumeTimer:" destination="PCV-Ym-uFn" eventType="touchUpInside" id="EmG-A0-brQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hln-xh-UB9">
+                                <rect key="frame" x="145" y="72" width="84" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="StartResumeBtn" destination="bTC-sS-MJd" id="Mqz-md-9UA"/>
+                        <outlet property="StopBtn" destination="YfY-D1-V2h" id="dZ6-FA-W8S"/>
+                        <outlet property="numberOfSets" destination="hln-xh-UB9" id="72Z-E3-P7g"/>
+                        <outlet property="timerLbl" destination="MHc-vS-8fS" id="hgT-hQ-4Zi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pd-q1-E9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3401" y="-613"/>
         </scene>
     </scenes>
 </document>
