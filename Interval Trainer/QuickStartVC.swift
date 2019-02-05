@@ -19,6 +19,8 @@ class QuickStartVC: UIViewController {
     
     var timer = Timer()
     var time = 5.0
+    var rest = 8.0
+    var active = true
     var sets = 10
     var audioPlayer = AVAudioPlayer()
     var audioPlayer2 = AVAudioPlayer()
@@ -45,6 +47,7 @@ class QuickStartVC: UIViewController {
   
     @objc func updateTimer(){
         var timeString = String(format: "%0.1f", time)
+        if(active){
         if time > 0.01 && sets >= 1{
             if (timeString == "3.0" || timeString == "2.0" || timeString == "1.0"){
                 audioPlayer.play()
@@ -58,11 +61,21 @@ class QuickStartVC: UIViewController {
             numberOfSets.text = String(sets)
             audioPlayer2.play()
             timerLbl.text = String(format: "%.1f", time)
+            active = false
+            rest = 10
         }
         else {
             timer.invalidate()
             //sender.isHidden = true
             StartResumeBtn.isHidden = false
+        }
+        }
+        else {
+            timerLbl.text = String(format: "%.1f", rest)
+            rest = rest - 0.1
+            if(rest <= 0.01) {
+                active = true
+            }
         }
         
     }
@@ -78,6 +91,7 @@ class QuickStartVC: UIViewController {
         sender.isHidden = true
         sender.setTitle("RESUME", for: .normal)
     }
+    
     
     func setTimer(){
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
