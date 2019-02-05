@@ -37,7 +37,14 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     }
 
     @IBAction func startTimer(_ sender: Any) {
-        performSegue(withIdentifier: TO_QUICK_START, sender: nil)
+        performSegue(withIdentifier: TO_START_TIMER, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? QuickStartVC {
+            destination.time = Double(activeClock.second)
+            destination.sets = Int(numberOfSets.text!)!
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

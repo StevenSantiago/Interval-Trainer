@@ -12,4 +12,5 @@ let TO_CREATE_INTERVAL_TRAINER = "CreateIntervalTrainerVC"
 let TO_SAVED_INTERVAL_TRAINER = "SavedIntervalTrainersVC"
 let TO_QUICK_START = "QuickStartVC"
 let TO_HISTORY = "HistoryVC"
+let TO_START_TIMER = "FromIntervalVC"
 
