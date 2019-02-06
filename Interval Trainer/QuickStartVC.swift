@@ -12,27 +12,34 @@ import AVFoundation
 
 class QuickStartVC: UIViewController {
 
+    @IBOutlet var TimerBackView: UIView!
     @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet weak var StartResumeBtn: UIButton!
     @IBOutlet weak var StopBtn: UIButton!
     @IBOutlet weak var numberOfSets: UILabel!
     
+    var activeTime = 5.0
+    var restTime = 3.0
+    var setsNumber = 4
+    
     var timer = Timer()
-    var time = 5.0
-    var rest = 8.0
+    var time = 0.0
+    var rest = 0.0
     var active = true
-    var sets = 10
+    var sets = 0
     var audioPlayer = AVAudioPlayer()
     var audioPlayer2 = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.isHidden = false
+        time = activeTime
+        rest = restTime
+        sets = setsNumber
         timerLbl.text = String(format: "%.1f", time)
         numberOfSets.text = String(sets)
         StartResumeBtn.setTitle("START", for: .normal)
         StartResumeBtn.titleLabel?.sizeToFit()
-        
         let repetitionEndSound = Bundle.main.path(forResource: "beep-07", ofType: "wav")
         let setEndSound = Bundle.main.path(forResource: "beep-04", ofType: "wav")
         do{
@@ -46,7 +53,7 @@ class QuickStartVC: UIViewController {
 
   
     @objc func updateTimer(){
-        var timeString = String(format: "%0.1f", time)
+        let timeString = String(format: "%0.1f", time)
         if(active){
         if time > 0.01 && sets >= 1{
             if (timeString == "3.0" || timeString == "2.0" || timeString == "1.0"){
@@ -57,24 +64,35 @@ class QuickStartVC: UIViewController {
         }
         else if time <= 0.01 && sets > 0{
             sets = sets - 1
-            time = 5.0
+            time = activeTime
             numberOfSets.text = String(sets)
             audioPlayer2.play()
             timerLbl.text = String(format: "%.1f", time)
             active = false
-            rest = 10
+            rest = restTime
+            TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
         }
         else {
             timer.invalidate()
             //sender.isHidden = true
+            timerLbl.text = "Finished!"
+            timerLbl.adjustsFontSizeToFitWidth = true
             StartResumeBtn.isHidden = false
         }
         }
         else {
+            let restString = String(format: "%0.1f", rest)
             timerLbl.text = String(format: "%.1f", rest)
             rest = rest - 0.1
+            if rest > 0.01 {
+                if (restString == "3.0" || restString == "2.0" || restString == "1.0"){
+                    audioPlayer.play()
+                }
+            }
             if(rest <= 0.01) {
                 active = true
+                audioPlayer2.play()
+                TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
             }
         }
         
@@ -92,7 +110,7 @@ class QuickStartVC: UIViewController {
         sender.setTitle("RESUME", for: .normal)
     }
     
-    
+
     func setTimer(){
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
     }

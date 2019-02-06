@@ -22,14 +22,17 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     
     var activeClock = Timers(hour: 0,minute: 0,second: 0)
+    var restClock = Timers(hour: 0,minute: 0,second: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.isHidden = false
         //Call from extension that closes keyboard
         self.hideKeyboardWhenTappedAround()
+        activeTime.tag = 1
         activeTime.delegate = self
         activeTime.dataSource = self
+        restTime.tag = 2
         restTime.delegate = self
         restTime.dataSource = self
 //        menuStackView.setCustomSpacing(<#T##spacing: CGFloat##CGFloat#>, after: <#T##UIView#>)
@@ -42,8 +45,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? QuickStartVC {
-            destination.time = Double(activeClock.second)
-            destination.sets = Int(numberOfSets.text!)!
+            destination.activeTime = Double(activeClock.second)
+            destination.setsNumber = Int(numberOfSets.text!)!
+            destination.restTime = Double(restClock.second)
         }
     }
     
@@ -80,13 +84,26 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         switch component {
         case 0:
-            activeClock.hour = row
+            if pickerView.tag == 1{
+                activeClock.hour = row
+            } else {
+                restClock.hour = row
+            }
         case 1:
-            activeClock.minute = row
+            if pickerView.tag == 1{
+                activeClock.minute = row
+            } else {
+                restClock.minute = row
+            }
         case 2:
-            activeClock.second = row
+            if pickerView.tag == 1{
+                activeClock.second = row
+            } else {
+                restClock.second = row
+            }
         default:
             break;
         }

@@ -117,7 +117,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orc-AP-a5W">
                                 <rect key="frame" x="65" y="185" width="250" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -142,7 +142,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppV-QA-TYF">
                                 <rect key="frame" x="145" y="72" width="84" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -152,6 +152,7 @@
                     <connections>
                         <outlet property="StartResumeBtn" destination="oRO-I0-xA4" id="q1H-va-nF6"/>
                         <outlet property="StopBtn" destination="xBN-Gv-q6s" id="Y5Q-Kr-oiC"/>
+                        <outlet property="TimerBackView" destination="Vc5-9R-ds8" id="H5N-MC-rTB"/>
                         <outlet property="numberOfSets" destination="ppV-QA-TYF" id="RJB-xA-8dD"/>
                         <outlet property="timerLbl" destination="orc-AP-a5W" id="M9J-l5-Y3X"/>
                     </connections>
