@@ -45,6 +45,10 @@ class QuickStartVC: UIViewController {
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: repetitionEndSound!))
             audioPlayer2 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: setEndSound!))
+            
+            try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient, mode: .default, options: [])
+            try? AVAudioSession.sharedInstance().setActive(true)
+            
         }
         catch{
             print("error")

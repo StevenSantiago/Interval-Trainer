@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070A1C1F220C119500C433D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A1C1E220C119500C433D4 /* AudioToolbox.framework */; };
 		0734C06521869BDA00F75226 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734C06421869BDA00F75226 /* Timer.swift */; };
 		07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D1305E2202B30A00D887A8 /* beep-04.wav */; };
 		07D130612202B31100D887A8 /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D130602202B31100D887A8 /* beep-07.wav */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070A1C1C220C119500C433D4 /* Interval Trainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Interval Trainer.entitlements"; sourceTree = "<group>"; };
+		070A1C1E220C119500C433D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0734C06421869BDA00F75226 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		07D1305E2202B30A00D887A8 /* beep-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-04.wav"; sourceTree = "<group>"; };
 		07D130602202B31100D887A8 /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
@@ -51,12 +54,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070A1C1F220C119500C433D4 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070A1C1D220C119500C433D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				070A1C1E220C119500C433D4 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0734C06621869DD300F75226 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +81,7 @@
 			children = (
 				07E686311E6A5E8F00B09760 /* Interval Trainer */,
 				07E686301E6A5E8F00B09760 /* Products */,
+				070A1C1D220C119500C433D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +96,7 @@
 		07E686311E6A5E8F00B09760 /* Interval Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				070A1C1C220C119500C433D4 /* Interval Trainer.entitlements */,
 				0734C06621869DD300F75226 /* Services */,
 				07FA145F21858CC00012D190 /* Misc */,
 				07E6864A1E6A661200B09760 /* Controllers */,
@@ -180,6 +194,14 @@
 						DevelopmentTeam = 7J978HLDTM;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -368,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Interval Trainer/Interval Trainer.entitlements";
 				DEVELOPMENT_TEAM = 7J978HLDTM;
 				INFOPLIST_FILE = "Interval Trainer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -375,6 +398,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Interval Trainer/Interval Trainer.entitlements";
 				DEVELOPMENT_TEAM = 7J978HLDTM;
 				INFOPLIST_FILE = "Interval Trainer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -389,6 +414,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
