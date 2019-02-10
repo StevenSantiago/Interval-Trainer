@@ -32,6 +32,7 @@ class QuickStartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
         time = activeTime
         rest = restTime
