@@ -45,9 +45,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? QuickStartVC {
-            destination.activeTime = Double(activeClock.second)
+            destination.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
             destination.setsNumber = Int(numberOfSets.text!)!
-            destination.restTime = Double(restClock.second)
+            destination.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
         }
     }
     
@@ -107,6 +107,10 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         default:
             break;
         }
+    }
+    
+    func addTime(hours:Int,minutes:Int,seconds:Int) -> Double {
+    return Double((hours*60*60) + (minutes*60) + (seconds))
     }
     
 
