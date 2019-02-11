@@ -64,7 +64,7 @@ class QuickStartVC: UIViewController {
             if (timeString == "3.0" || timeString == "2.0" || timeString == "1.0"){
                 audioPlayer.play()
             }
-        time = time - 0.1
+        time = abs(time - 0.1)//FIX negative issue. Double trailling digits causes below to display as negative at 0.1
         timerLbl.text = String(format: "%.1f", time)
         }
         else if time <= 0.01 && sets > 0{
@@ -86,9 +86,10 @@ class QuickStartVC: UIViewController {
         }
         }
         else {
+            rest = abs(rest - 0.1)
             let restString = String(format: "%0.1f", rest)
             timerLbl.text = String(format: "%.1f", rest)
-            rest = rest - 0.1
+            
             if rest > 0.01 {
                 if (restString == "3.0" || restString == "2.0" || restString == "1.0"){
                     audioPlayer.play()
