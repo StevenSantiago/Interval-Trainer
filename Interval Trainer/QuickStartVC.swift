@@ -120,4 +120,30 @@ class QuickStartVC: UIViewController {
     func setTimer(){
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
     }
+    
+    func convertToHoursMinsSeconds(Seconds:Double) -> (Int,Int,Int) {
+        var hours:Int = 0
+        var minutes = Int(Seconds/60)
+        var seconds:Int = 0
+        var remainder:Int = 0
+        
+        if(Seconds >= 3600){
+            //Hours
+            hours = 1
+        }
+        if(Seconds >= 60){
+            //Minutes
+            minutes = Int(Seconds/60)
+            
+            seconds = subtractSeconds(minutes: minutes) % 60
+        } else {
+            seconds = Int(Seconds)
+        }
+        
+        return (hours,minutes,seconds)
+    }
+    
+    func subtractSeconds(minutes:Int) ->Int {
+        return Int(minutes*60)
+    }
 }
