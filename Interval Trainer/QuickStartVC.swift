@@ -18,8 +18,8 @@ class QuickStartVC: UIViewController {
     @IBOutlet weak var StopBtn: UIButton!
     @IBOutlet weak var numberOfSets: UILabel!
     
-    var activeTime = 5.0
-    var restTime = 3.0
+    var activeTime = 5
+    var restTime = 3
     var setsNumber = 4
     
     var hour = 0
@@ -27,8 +27,8 @@ class QuickStartVC: UIViewController {
     var seconds = 0
     
     var timer = Timer()
-    var time = 0.0
-    var rest = 0.0
+    var time = 0
+    var rest = 0
     var active = true
     var sets = 0
     var audioPlayer = AVAudioPlayer()
@@ -64,16 +64,16 @@ class QuickStartVC: UIViewController {
   
     @objc func updateTimer(){
             if(active){
-                if time > 0.01 && sets >= 1{
-                    if (time == 3.0 || time == 2.0 || time == 1.0){
+                if time > 0 && sets >= 1{
+                    if (time == 3 || time == 2 || time == 1){
                         audioPlayer.play()
                     }
-                time = abs(time - 1.0)//FIX negative issue. Double trailling digits causes below to display as negative at 0.1
+                time = abs(time - 1)//FIX negative issue. Double trailling digits causes below to display as negative at 0.1
                 var HMS = convertToHoursMinsSeconds(Seconds: time)
                 timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                 }
                 
-                else if time <= 0.01 && sets > 0{
+                else if time <= 0 && sets > 0{
                     sets = sets - 1
                     time = activeTime
                     numberOfSets.text = String(sets)
@@ -91,16 +91,16 @@ class QuickStartVC: UIViewController {
                     StartResumeBtn.isHidden = false
                 }
             } else {
-                    rest = abs(rest - 0.1)
+                    rest = abs(rest - 1)
                     let restString = String(format: "%0.1f", rest)
                     timerLbl.text = String(format: "%.1f", rest)
     
-                    if rest > 0.01 {
+                    if rest > 0 {
                         if (restString == "3.0" || restString == "2.0" || restString == "1.0"){
                             audioPlayer.play()
                         }
                     }
-                    if(rest <= 0.01) {
+                    if(rest <= 0) {
                         active = true
                         audioPlayer2.play()
                         TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
@@ -127,7 +127,7 @@ class QuickStartVC: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
     }
     
-    func convertToHoursMinsSeconds(Seconds:Double) -> (Int,Int,Int) {
+    func convertToHoursMinsSeconds(Seconds:Int) -> (Int,Int,Int) {
         var hours:Int = 0
         var minutes = Int(Seconds/60)
         var seconds:Int = 0
@@ -140,12 +140,16 @@ class QuickStartVC: UIViewController {
             //Minutes
             minutes = Int(Seconds/60)
             
-            seconds = (minutes*60) % 60
+            seconds = Seconds % 60
         } else {
             seconds = Int(Seconds)
         }
         
         return (hours,minutes,seconds)
+    }
+    
+    func convertToSeconds(h:Int,m:Int,s:Int) -> Int{
+        return Int(s + m*60 + h*60*60)
     }
     
     

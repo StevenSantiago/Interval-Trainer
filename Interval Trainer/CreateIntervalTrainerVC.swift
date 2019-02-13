@@ -112,8 +112,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         }
     }
     
-    func addTime(hours:Int,minutes:Int,seconds:Int) -> Double {
-    return Double((hours*60*60) + (minutes*60) + (seconds))
+    func addTime(hours:Int,minutes:Int,seconds:Int) -> Int {
+    return Int((hours*60*60) + (minutes*60) + (seconds))
     }
     
 
