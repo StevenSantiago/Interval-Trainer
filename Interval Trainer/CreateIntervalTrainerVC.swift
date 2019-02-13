@@ -48,6 +48,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             destination.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
             destination.setsNumber = Int(numberOfSets.text!)!
             destination.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+            destination.hour = activeClock.hour
+            destination.minute = activeClock.minute
+            destination.seconds = activeClock.second
         }
     }
     
