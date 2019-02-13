@@ -37,7 +37,7 @@ class QuickStartVC: UIViewController {
         time = activeTime
         rest = restTime
         sets = setsNumber
-        timerLbl.text = String(format: "%.1f", time)
+        timerLbl.text = String(format: "%.1f", time) // Testing Changes
         numberOfSets.text = String(sets)
         StartResumeBtn.setTitle("START", for: .normal)
         StartResumeBtn.titleLabel?.sizeToFit()
