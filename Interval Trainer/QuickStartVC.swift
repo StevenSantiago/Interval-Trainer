@@ -64,9 +64,11 @@ class QuickStartVC: UIViewController {
   
     @objc func updateTimer(){
             if(active){
+                if(time != 0){
                 var HMS = convertToHoursMinsSeconds(Seconds: time)
                 timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
-                if time <= 0 && sets > 0{
+                }
+                if time == 0 && sets > 0{
                     sets = sets - 1
                     time = activeTime
                     numberOfSets.text = String(sets)
@@ -74,6 +76,9 @@ class QuickStartVC: UIViewController {
                     active = false
                     rest = restTime
                     TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
+                    var HMS = convertToHoursMinsSeconds(Seconds: rest)
+                    timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+                    rest = rest - 1
                 }
                  else if time > 0 && sets >= 1{
                     if (time == 3 || time == 2 || time == 1){
@@ -81,8 +86,6 @@ class QuickStartVC: UIViewController {
                     }
                     time = abs(time - 1)
                 }
-                
-                 
                 else {
                     timer.invalidate()
                     //sender.isHidden = true
@@ -91,19 +94,26 @@ class QuickStartVC: UIViewController {
                     StartResumeBtn.isHidden = false
                 }
             } else {
-                    var HMS = convertToHoursMinsSeconds(Seconds: rest)
+                
+                if(rest == 0) {
+                    active = true
+                    time = activeTime
+                    audioPlayer2.play()
+                    var HMS = convertToHoursMinsSeconds(Seconds: time)
                     timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
-                    if rest > 0 {
+                    TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
+                    time = time - 1
+                }
+                    else if rest > 0 {
                         if (rest == 3 || rest == 2 || rest == 1){
                             audioPlayer.play()
                         }
+                    var HMS = convertToHoursMinsSeconds(Seconds: rest)
+                    timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                         rest = abs(rest - 1)
+                    
                     }
-                    else if(rest <= 0) {
-                        active = true
-                        audioPlayer2.play()
-                        TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
-                    }
+                
         
         }
         
