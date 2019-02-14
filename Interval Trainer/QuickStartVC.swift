@@ -64,25 +64,25 @@ class QuickStartVC: UIViewController {
   
     @objc func updateTimer(){
             if(active){
-                if time > 0 && sets >= 1{
-                    if (time == 3 || time == 2 || time == 1){
-                        audioPlayer.play()
-                    }
-                time = abs(time - 1)//FIX negative issue. Double trailling digits causes below to display as negative at 0.1
                 var HMS = convertToHoursMinsSeconds(Seconds: time)
                 timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
-                }
-                
-                else if time <= 0 && sets > 0{
+                if time <= 0 && sets > 0{
                     sets = sets - 1
                     time = activeTime
                     numberOfSets.text = String(sets)
                     audioPlayer2.play()
-                    timerLbl.text = String(format: "%.1f", time)
                     active = false
                     rest = restTime
                     TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
                 }
+                 else if time > 0 && sets >= 1{
+                    if (time == 3 || time == 2 || time == 1){
+                        audioPlayer.play()
+                    }
+                    time = abs(time - 1)
+                }
+                
+                 
                 else {
                     timer.invalidate()
                     //sender.isHidden = true
@@ -91,16 +91,15 @@ class QuickStartVC: UIViewController {
                     StartResumeBtn.isHidden = false
                 }
             } else {
-                    rest = abs(rest - 1)
-                    let restString = String(format: "%0.1f", rest)
-                    timerLbl.text = String(format: "%.1f", rest)
-    
+                    var HMS = convertToHoursMinsSeconds(Seconds: rest)
+                    timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                     if rest > 0 {
-                        if (restString == "3.0" || restString == "2.0" || restString == "1.0"){
+                        if (rest == 3 || rest == 2 || rest == 1){
                             audioPlayer.play()
                         }
+                        rest = abs(rest - 1)
                     }
-                    if(rest <= 0) {
+                    else if(rest <= 0) {
                         active = true
                         audioPlayer2.play()
                         TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
