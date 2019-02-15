@@ -41,7 +41,6 @@ class QuickStartVC: UIViewController {
         time = activeTime
         rest = restTime
         sets = setsNumber
-        //timerLbl.text = String(format: "%.1f", time)
         timerLbl.text = String(minute) + ":" + String(format: "%02d",seconds)
         numberOfSets.text = String(sets)
         StartResumeBtn.setTitle("START", for: .normal)
@@ -54,7 +53,6 @@ class QuickStartVC: UIViewController {
             
             try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient, mode: .default, options: [])
             try? AVAudioSession.sharedInstance().setActive(true) 
-            
         }
         catch{
             print("error")
@@ -86,21 +84,24 @@ class QuickStartVC: UIViewController {
                     }
                     time = abs(time - 1)
                 }
-                else {
-                    timer.invalidate()
-                    //sender.isHidden = true
-                    timerLbl.text = "Finished!"
-                    timerLbl.adjustsFontSizeToFitWidth = true
-                    StartResumeBtn.isHidden = false
-                }
+
             } else {
                 
                 if(rest == 0) {
                     active = true
                     time = activeTime
                     audioPlayer2.play()
+                    if(sets == 0){
+                        time = 0
+                        timer.invalidate()
+                        timerLbl.text = "Finished!"
+                        timerLbl.adjustsFontSizeToFitWidth = true
+                        StartResumeBtn.isHidden = false
+                    } else{
                     var HMS = convertToHoursMinsSeconds(Seconds: time)
                     timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+                    }
+                    
                     TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
                     time = time - 1
                 }
@@ -164,47 +165,3 @@ class QuickStartVC: UIViewController {
     
 }
 
-
-//        let timeString = String(format: "%0.1f", time)
-//        if(active){
-//        if time > 0.01 && sets >= 1{
-//            if (timeString == "3.0" || timeString == "2.0" || timeString == "1.0"){
-//                audioPlayer.play()
-//            }
-//        time = abs(time - 0.1)//FIX negative issue. Double trailling digits causes below to display as negative at 0.1
-//        timerLbl.text = String(format: "%.1f", time)
-//        }
-//        else if time <= 0.01 && sets > 0{
-//            sets = sets - 1
-//            time = activeTime
-//            numberOfSets.text = String(sets)
-//            audioPlayer2.play()
-//            timerLbl.text = String(format: "%.1f", time)
-//            active = false
-//            rest = restTime
-//            TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
-//        }
-//        else {
-//            timer.invalidate()
-//            //sender.isHidden = true
-//            timerLbl.text = "Finished!"
-//            timerLbl.adjustsFontSizeToFitWidth = true
-//            StartResumeBtn.isHidden = false
-//        }
-//        }
-//        else {
-//            rest = abs(rest - 0.1)
-//            let restString = String(format: "%0.1f", rest)
-//            timerLbl.text = String(format: "%.1f", rest)
-//
-//            if rest > 0.01 {
-//                if (restString == "3.0" || restString == "2.0" || restString == "1.0"){
-//                    audioPlayer.play()
-//                }
-//            }
-//            if(rest <= 0.01) {
-//                active = true
-//                audioPlayer2.play()
-//                TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
-//            }
-//        }
