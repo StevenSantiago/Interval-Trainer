@@ -61,9 +61,10 @@ class QuickStartVC: UIViewController {
 
   
     @objc func updateTimer(){
+        var HMS:(Int,Int,Int)
             if(active){
                 if(time != 0){
-                var HMS = convertToHoursMinsSeconds(Seconds: time)
+                HMS = convertToHoursMinsSeconds(Seconds: time)
                 timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                 }
                 if time == 0 && sets > 0{
@@ -74,7 +75,7 @@ class QuickStartVC: UIViewController {
                     active = false
                     rest = restTime
                     TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
-                    var HMS = convertToHoursMinsSeconds(Seconds: rest)
+                    HMS = convertToHoursMinsSeconds(Seconds: rest)
                     timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                     rest = rest - 1
                 }
@@ -98,7 +99,7 @@ class QuickStartVC: UIViewController {
                         timerLbl.adjustsFontSizeToFitWidth = true
                         StartResumeBtn.isHidden = false
                     } else{
-                    var HMS = convertToHoursMinsSeconds(Seconds: time)
+                    HMS = convertToHoursMinsSeconds(Seconds: time)
                     timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                     }
                     
