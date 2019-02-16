@@ -110,7 +110,7 @@ class QuickStartVC: UIViewController {
                         if (rest == 3 || rest == 2 || rest == 1){
                             audioPlayer.play()
                         }
-                    var HMS = convertToHoursMinsSeconds(Seconds: rest)
+                     HMS = convertToHoursMinsSeconds(Seconds: rest)
                     timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                         rest = abs(rest - 1)
                     
