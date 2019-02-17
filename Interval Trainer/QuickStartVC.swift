@@ -63,6 +63,7 @@ class QuickStartVC: UIViewController {
     @objc func updateTimer(){
         var HMS:(Int,Int,Int)
             if(active){
+                time = time - 1
                 if(time != 0){
                 HMS = convertToHoursMinsSeconds(Seconds: time)
                 timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
@@ -83,9 +84,7 @@ class QuickStartVC: UIViewController {
                     if (time == 3 || time == 2 || time == 1){
                         audioPlayer.play()
                     }
-                    time = abs(time - 1)
-                    HMS = convertToHoursMinsSeconds(Seconds: time)
-                    timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+                    
                 }
 
             } else {
@@ -99,6 +98,7 @@ class QuickStartVC: UIViewController {
                         timer.invalidate()
                         timerLbl.text = "Finished!"
                         timerLbl.adjustsFontSizeToFitWidth = true
+                        timerLbl.minimumScaleFactor = 0.1
                         StartResumeBtn.isHidden = false
                     } else{
                     HMS = convertToHoursMinsSeconds(Seconds: time)
@@ -106,7 +106,6 @@ class QuickStartVC: UIViewController {
                     }
                     
                     TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
-                    time = time - 1
                 }
                     else if rest > 0 {
                         if (rest == 3 || rest == 2 || rest == 1){

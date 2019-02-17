@@ -114,14 +114,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orc-AP-a5W">
-                                <rect key="frame" x="142" y="347.66666666666669" width="130" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="orc-AP-a5W">
+                                <rect key="frame" x="142" y="347.33333333333331" width="130" height="41.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppV-QA-TYF">
-                                <rect key="frame" x="191.66666666666666" y="69" width="31" height="16"/>
+                                <rect key="frame" x="191.33333333333334" y="69" width="31.666666666666657" height="15.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
