@@ -96,9 +96,10 @@ class QuickStartVC: UIViewController {
                     if(sets == 0){
                         time = 0
                         timer.invalidate()
-                        timerLbl.text = "Finished!"
+                        timerLbl.text = "Complete!"
+                        //timerLbl.adjustsFontForContentSizeCategory = true
                         timerLbl.adjustsFontSizeToFitWidth = true
-                        timerLbl.minimumScaleFactor = 0.1
+                        //timerLbl.sizeToFit()
                         StartResumeBtn.isHidden = false
                     } else{
                     HMS = convertToHoursMinsSeconds(Seconds: time)
