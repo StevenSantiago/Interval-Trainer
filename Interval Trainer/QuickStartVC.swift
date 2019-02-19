@@ -18,6 +18,8 @@ class QuickStartVC: UIViewController {
     @IBOutlet weak var StopBtn: UIButton!
     @IBOutlet weak var numberOfSets: UILabel!
     
+    var intervalTimer = Timers(hour: <#T##Int#>, minute: <#T##Int#>, second: <#T##Int#>)
+    
     var activeTime = 5
     var restTime = 3
     var setsNumber = 4
@@ -97,9 +99,7 @@ class QuickStartVC: UIViewController {
                         time = 0
                         timer.invalidate()
                         timerLbl.text = "Complete!"
-                        //timerLbl.adjustsFontForContentSizeCategory = true
                         timerLbl.adjustsFontSizeToFitWidth = true
-                        //timerLbl.sizeToFit()
                         StartResumeBtn.isHidden = false
                     } else{
                     HMS = convertToHoursMinsSeconds(Seconds: time)
