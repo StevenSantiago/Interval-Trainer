@@ -25,7 +25,11 @@ struct Timers {
     
     
     mutating func subtractRunTime(){
-        currentRunTime = currentRunTime - 1;
+        currentRunTime = currentRunTime - 1
+    }
+    
+    mutating func subtractSet() {
+        sets = sets - 1
     }
     
     func convertToHoursMinsSeconds(Seconds:Int) -> (Int,Int,Int) {
