@@ -54,7 +54,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             destination.hour = activeClock.hour
             destination.minute = activeClock.minute
             destination.seconds = activeClock.second
-            
+            destination.intervalTimer = activeClock
         }
     }
     

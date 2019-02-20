@@ -21,6 +21,10 @@ struct Timers {
         self.hour = hour
         self.minute = minute
         self.second = second
+        restTime = 0
+        activeTime = 0
+        currentRunTime = 0
+        sets = 0
     }
     
     
@@ -30,6 +34,14 @@ struct Timers {
     
     mutating func subtractSet() {
         sets = sets - 1
+    }
+    
+    mutating func resetActiveTime(){
+        currentRunTime = activeTime
+    }
+    
+    mutating func resetRestTime(){
+        currentRunTime = restTime
     }
     
     func convertToHoursMinsSeconds(Seconds:Int) -> (Int,Int,Int) {
