@@ -21,8 +21,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var menuStackView: UIStackView!
     
     
-    var activeClock = Timers(hour: 0,minute: 0,second: 0)
-    var restClock = Timers(hour: 0,minute: 0,second: 0)
+    var activeClock = Timers(hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
+    var restClock = Timers(hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +45,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? QuickStartVC {
-            destination.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
             activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
-            destination.setsNumber = Int(numberOfSets.text!)!
             activeClock.sets = Int(numberOfSets.text!)!
-            destination.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
             activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
             activeClock.currentRunTime = activeClock.activeTime
             destination.intervalTimer = activeClock

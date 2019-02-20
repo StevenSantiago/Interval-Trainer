@@ -17,14 +17,14 @@ struct Timers {
     var currentRunTime:Int
     var sets:Int
     
-    init(hour:Int,minute:Int,second:Int) {
+    init(hour:Int,minute:Int,second:Int,restTime:Int,activeTime:Int,currentRunTime:Int,sets:Int) {
         self.hour = hour
         self.minute = minute
         self.second = second
-        restTime = 0
-        activeTime = 0
-        currentRunTime = 0
-        sets = 0
+        self.restTime = restTime
+        self.activeTime = activeTime
+        self.currentRunTime = currentRunTime
+        self.sets = sets
     }
     
     
@@ -42,6 +42,10 @@ struct Timers {
     
     mutating func resetRestTime(){
         currentRunTime = restTime
+    }
+    
+    mutating func endOfSession(){
+        currentRunTime = 0
     }
     
     func convertToHoursMinsSeconds(Seconds:Int) -> (Int,Int,Int) {

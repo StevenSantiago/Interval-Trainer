@@ -18,11 +18,9 @@ class QuickStartVC: UIViewController {
     @IBOutlet weak var StopBtn: UIButton!
     @IBOutlet weak var numberOfSets: UILabel!
     
-    var intervalTimer = Timers(hour: 0, minute: 0, second: 0)
+    var intervalTimer = Timers(hour: 0, minute: 0, second: 45, restTime: 12, activeTime: 45, currentRunTime: 45, sets: 10)
     
-    var activeTime = 5
-    var restTime = 3
-    var setsNumber = 4
+    var HMS:(Int,Int,Int) = (0,0,0)
     
     var timer = Timer()
     var active = true
@@ -53,14 +51,11 @@ class QuickStartVC: UIViewController {
 
   
     @objc func updateTimer(){
-        var HMS:(Int,Int,Int)
         if(active){
         intervalTimer.subtractRunTime()
         if(intervalTimer.currentRunTime != 0){
-            HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
-            timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+            updateTimerLbl()
         }
-        
         if intervalTimer.currentRunTime == 0 && intervalTimer.sets > 0{
                     intervalTimer.subtractSet()
                     numberOfSets.text = String(intervalTimer.sets)
@@ -68,14 +63,11 @@ class QuickStartVC: UIViewController {
                     active = false
                     intervalTimer.resetRestTime()
                     TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
-                    HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
-                    timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+                    updateTimerLbl()
                     intervalTimer.subtractRunTime()
         }
         else if intervalTimer.currentRunTime > 0 && intervalTimer.sets >= 1{
-                    if (intervalTimer.currentRunTime == 3 || intervalTimer.currentRunTime == 2 || intervalTimer.currentRunTime == 1){
-                        audioPlayer.play()
-                    }
+                    countDownAlert()
         }
     }
         else {
@@ -84,28 +76,35 @@ class QuickStartVC: UIViewController {
                     intervalTimer.resetActiveTime()
                     audioPlayer2.play()
                     if(intervalTimer.sets == 0){
-                        intervalTimer.currentRunTime = 0 // move to model
+                        intervalTimer.endOfSession()
                         timer.invalidate()
                         timerLbl.text = "Complete!"
                         timerLbl.adjustsFontSizeToFitWidth = true
                         StartResumeBtn.isHidden = false
                     } else{
-                        HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
-                        timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+                        updateTimerLbl()
                     }
-            
                     TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
                 }
                 else if intervalTimer.currentRunTime > 0 {
-                    if (intervalTimer.currentRunTime == 3 || intervalTimer.currentRunTime == 2 || intervalTimer.currentRunTime == 1){
-                        audioPlayer.play()
-                    }
-                    HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
-                    timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+                    countDownAlert()
+                    updateTimerLbl()
                     intervalTimer.subtractRunTime()
                 }
         }
     }
+    
+    func countDownAlert(){
+        if (intervalTimer.currentRunTime == 3 || intervalTimer.currentRunTime == 2 || intervalTimer.currentRunTime == 1){
+            audioPlayer.play()
+        }
+    }
+    
+    func updateTimerLbl(){
+        HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
+        timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+    }
+    
     @IBAction func stopTimer(_ sender: UIButton) {
         timer.invalidate()
         sender.isHidden = true
