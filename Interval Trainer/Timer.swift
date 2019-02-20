@@ -9,7 +9,7 @@
 import Foundation
 
 struct Timers {
-    var hour:Int
+    var hour:Int // hours,minutes and seconds might be redudant fields. Look into this
     var minute:Int
     var second:Int
     var restTime:Int
