@@ -24,15 +24,8 @@ class QuickStartVC: UIViewController {
     var restTime = 3
     var setsNumber = 4
     
-    var hour = 0
-    var minute = 0
-    var seconds = 0
-    
     var timer = Timer()
-    var time = 0
-    var rest = 0
     var active = true
-    var sets = 0
     var audioPlayer = AVAudioPlayer()
     var audioPlayer2 = AVAudioPlayer()
     
@@ -40,9 +33,6 @@ class QuickStartVC: UIViewController {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
-        //time = activeTime
-        //rest = restTime
-        //sets = setsNumber
         timerLbl.text = String(intervalTimer.minute) + ":" + String(format: "%02d",intervalTimer.second)
         numberOfSets.text = String(intervalTimer.sets)
         StartResumeBtn.setTitle("START", for: .normal)
@@ -67,7 +57,7 @@ class QuickStartVC: UIViewController {
         if(active){
         intervalTimer.subtractRunTime()
         if(intervalTimer.currentRunTime != 0){
-            HMS = convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
+            HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
             timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
         }
         
@@ -78,7 +68,7 @@ class QuickStartVC: UIViewController {
                     active = false
                     intervalTimer.resetRestTime()
                     TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
-                    HMS = convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
+                    HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
                     timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                     intervalTimer.subtractRunTime()
         }
@@ -89,7 +79,6 @@ class QuickStartVC: UIViewController {
         }
     }
         else {
-            //
                 if(intervalTimer.currentRunTime == 0) {
                     active = true
                     intervalTimer.resetActiveTime()
@@ -101,7 +90,7 @@ class QuickStartVC: UIViewController {
                         timerLbl.adjustsFontSizeToFitWidth = true
                         StartResumeBtn.isHidden = false
                     } else{
-                        HMS = convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
+                        HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
                         timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                     }
             
@@ -111,7 +100,7 @@ class QuickStartVC: UIViewController {
                     if (intervalTimer.currentRunTime == 3 || intervalTimer.currentRunTime == 2 || intervalTimer.currentRunTime == 1){
                         audioPlayer.play()
                     }
-                    HMS = convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
+                    HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
                     timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
                     intervalTimer.subtractRunTime()
                 }
@@ -135,90 +124,7 @@ class QuickStartVC: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
     }
     
-    func convertToHoursMinsSeconds(Seconds:Int) -> (Int,Int,Int) {
-        var hours:Int = 0
-        var minutes = Int(Seconds/60)
-        var seconds:Int = 0
-        
-        if(Seconds >= 3600){
-            //Hours
-            hours = 1
-        }
-        if(Seconds >= 60){
-            //Minutes
-            minutes = Int(Seconds/60)
-            
-            seconds = Seconds % 60
-        } else {
-            seconds = Int(Seconds)
-        }
-        
-        return (hours,minutes,seconds)
-    }
-    
-    func convertToSeconds(h:Int,m:Int,s:Int) -> Int{
-        return Int(s + m*60 + h*60*60)
-    }
     
     
 }
 
-
-
-//if(active){
-//    //time = time - 1
-//    intervalTimer.subtractRunTime()
-//    if(time != 0){
-//        HMS = convertToHoursMinsSeconds(Seconds: time)
-//        timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
-//    }
-//    if time == 0 && sets > 0{
-//        sets = sets - 1
-//        time = activeTime
-//        numberOfSets.text = String(sets)
-//        audioPlayer2.play()
-//        active = false
-//        rest = restTime
-//        TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
-//        HMS = convertToHoursMinsSeconds(Seconds: rest)
-//        timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
-//        rest = rest - 1
-//    }
-//    else if time > 0 && sets >= 1{
-//        if (time == 3 || time == 2 || time == 1){
-//            audioPlayer.play()
-//        }
-//
-//    }
-//
-//} else {
-//
-//    if(rest == 0) {
-//        active = true
-//        time = activeTime
-//        audioPlayer2.play()
-//        if(sets == 0){
-//            time = 0
-//            timer.invalidate()
-//            timerLbl.text = "Complete!"
-//            timerLbl.adjustsFontSizeToFitWidth = true
-//            StartResumeBtn.isHidden = false
-//        } else{
-//            HMS = convertToHoursMinsSeconds(Seconds: time)
-//            timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
-//        }
-//
-//        TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
-//    }
-//    else if rest > 0 {
-//        if (rest == 3 || rest == 2 || rest == 1){
-//            audioPlayer.play()
-//        }
-//        HMS = convertToHoursMinsSeconds(Seconds: rest)
-//        timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
-//        rest = abs(rest - 1)
-//
-//    }
-//
-//
-//}

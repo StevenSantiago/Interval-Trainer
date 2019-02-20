@@ -52,9 +52,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             destination.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
             activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
             activeClock.currentRunTime = activeClock.activeTime
-            destination.hour = activeClock.hour
-            destination.minute = activeClock.minute
-            destination.seconds = activeClock.second
             destination.intervalTimer = activeClock
         }
     }
