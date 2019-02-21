@@ -5,7 +5,7 @@
 //  Created by Steven Santiago on 3/3/17.
 //  Copyright © 2017 Steven Santiago. All rights reserved.
 // StartController Done for now
-//TODO: Work on Quick Start Controller MVC
+//
 
 import UIKit
 

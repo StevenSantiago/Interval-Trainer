@@ -4,7 +4,7 @@
 // Has user create interval timer settings.
 //  Created by Steven Santiago on 3/4/17.
 //  Copyright © 2017 Steven Santiago. All rights reserved.
-//
+//GOod
 
 import UIKit
 
