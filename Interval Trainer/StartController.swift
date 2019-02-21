@@ -31,7 +31,7 @@ class StartController: UIViewController {
     }
     
     @IBAction func QuickStart(_ sender: Any) {
-        performSegue(withIdentifier: TO_QUICK_START, sender: nil)
+        performSegue(withIdentifier: TO_INTERVAL_TIMER, sender: nil)
     }
     
     @IBAction func SavedIntervalTimers(_ sender: Any) {

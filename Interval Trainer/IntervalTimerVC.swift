@@ -12,7 +12,7 @@ import UIKit
 import AVFoundation
 
 
-class QuickStartVC: UIViewController {
+class IntervalTimerVC: UIViewController {
 
     @IBOutlet var TimerBackView: UIView!
     @IBOutlet weak var timerLbl: UILabel!
@@ -122,7 +122,7 @@ class QuickStartVC: UIViewController {
     
 
     func setTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(QuickStartVC.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(IntervalTimerVC.updateTimer), userInfo: nil, repeats: true)
     }
     
     

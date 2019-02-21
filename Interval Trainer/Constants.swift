@@ -10,7 +10,7 @@ import Foundation
 //Controller Identifiers
 let TO_CREATE_INTERVAL_TRAINER = "CreateIntervalTrainerVC"
 let TO_SAVED_INTERVAL_TRAINER = "SavedIntervalTrainersVC"
-let TO_QUICK_START = "QuickStartVC"
+let TO_INTERVAL_TIMER = "IntervalTimerVC"
 let TO_HISTORY = "HistoryVC"
 let TO_START_TIMER = "FromIntervalVC"
 

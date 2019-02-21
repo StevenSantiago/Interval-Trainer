@@ -18,7 +18,7 @@
 		07E6863D1E6A5E8F00B09760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E6863C1E6A5E8F00B09760 /* Assets.xcassets */; };
 		07E686401E6A5E8F00B09760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E6863E1E6A5E8F00B09760 /* LaunchScreen.storyboard */; };
 		07E6864C1E6A662400B09760 /* LASER4.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 07E6864B1E6A662400B09760 /* LASER4.TTF */; };
-		07E6864E1E6ADC1700B09760 /* QuickStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6864D1E6ADC1700B09760 /* QuickStartVC.swift */; };
+		07E6864E1E6ADC1700B09760 /* IntervalTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6864D1E6ADC1700B09760 /* IntervalTimerVC.swift */; };
 		07E686501E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */; };
 		07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */; };
 		07FA145C218557DB0012D190 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA145B218557DB0012D190 /* Constants.swift */; };
@@ -41,7 +41,7 @@
 		07E6863F1E6A5E8F00B09760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07E686411E6A5E8F00B09760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E6864B1E6A662400B09760 /* LASER4.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = LASER4.TTF; sourceTree = "<group>"; };
-		07E6864D1E6ADC1700B09760 /* QuickStartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickStartVC.swift; sourceTree = "<group>"; };
+		07E6864D1E6ADC1700B09760 /* IntervalTimerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimerVC.swift; sourceTree = "<group>"; };
 		07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIntervalTrainerVC.swift; sourceTree = "<group>"; };
 		07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIntervalTrainersVC.swift; sourceTree = "<group>"; };
 		07FA145B218557DB0012D190 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				07E686341E6A5E8F00B09760 /* StartController.swift */,
-				07E6864D1E6ADC1700B09760 /* QuickStartVC.swift */,
+				07E6864D1E6ADC1700B09760 /* IntervalTimerVC.swift */,
 				07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */,
 				07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */,
 				07FA145D21855B4B0012D190 /* HistoryVC.swift */,
@@ -246,7 +246,7 @@
 			files = (
 				07E6863B1E6A5E8F00B09760 /* Interval_Trainer.xcdatamodeld in Sources */,
 				07E686501E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift in Sources */,
-				07E6864E1E6ADC1700B09760 /* QuickStartVC.swift in Sources */,
+				07E6864E1E6ADC1700B09760 /* IntervalTimerVC.swift in Sources */,
 				0734C06521869BDA00F75226 /* Timer.swift in Sources */,
 				07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */,
 				07FA145C218557DB0012D190 /* Constants.swift in Sources */,
