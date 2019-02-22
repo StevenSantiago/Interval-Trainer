@@ -36,9 +36,9 @@ class IntervalTimerVC: UIViewController {
 
         navigationController!.navigationBar.isHidden = false
         timerLbl.text = String(intervalTimer.minute) + ":" + String(format: "%02d",intervalTimer.second)
-        
+        timerLbl.adjustsFontSizeToFitWidth = false
         let originalFont = UIFont(name: "Laserian", size: 45)
-        let originalFontDescriptor = originalFont!.fontDescriptor
+        var originalFontDescriptor = originalFont!.fontDescriptor
         print(originalFontDescriptor)
 
         let fontDescriptorFeatureSettings = [
@@ -47,14 +47,24 @@ class IntervalTimerVC: UIViewController {
                 UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector
             ]
         ]
+        
+        let fontDescriptorFeatureSettingsT = [
+            [
+                UIFontDescriptor.FeatureKey.featureIdentifier:kAllTypographicFeaturesType,
+                UIFontDescriptor.FeatureKey.typeIdentifier: kAllTypeFeaturesOnSelector
+            ]
+        ]
 
         let fontDescriptorAttributes = [UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettings]
-        let fontDescriptor = originalFontDescriptor.addingAttributes(fontDescriptorAttributes)
+        originalFontDescriptor = originalFontDescriptor.addingAttributes(fontDescriptorAttributes)
+        originalFontDescriptor = originalFontDescriptor.addingAttributes([UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettingsT])
+        let fontDescriptor = originalFontDescriptor
         
         print(fontDescriptor)
         
         let font = UIFont(descriptor: fontDescriptor, size: 0.0)
 
+        timerLbl.font = font
         
         numberOfSets.text = String(intervalTimer.sets)
         StartResumeBtn.setTitle("START", for: .normal)
@@ -103,7 +113,7 @@ class IntervalTimerVC: UIViewController {
                         intervalTimer.endOfSession()
                         timer.invalidate()
                         timerLbl.text = "Complete!"
-                        timerLbl.adjustsFontSizeToFitWidth = true
+                        //timerLbl.adjustsFontSizeToFitWidth = true
                         StartResumeBtn.isHidden = false
                     } else{
                         updateTimerLbl()
