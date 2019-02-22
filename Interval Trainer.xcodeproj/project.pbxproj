@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		070A1C1F220C119500C433D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A1C1E220C119500C433D4 /* AudioToolbox.framework */; };
+		071FFD4A221F942500C087D6 /* DisplayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FFD49221F942500C087D6 /* DisplayTimer.swift */; };
 		0734C06521869BDA00F75226 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734C06421869BDA00F75226 /* Timer.swift */; };
 		07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D1305E2202B30A00D887A8 /* beep-04.wav */; };
 		07D130612202B31100D887A8 /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D130602202B31100D887A8 /* beep-07.wav */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		070A1C1C220C119500C433D4 /* Interval Trainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Interval Trainer.entitlements"; sourceTree = "<group>"; };
 		070A1C1E220C119500C433D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		071FFD49221F942500C087D6 /* DisplayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTimer.swift; sourceTree = "<group>"; };
 		0734C06421869BDA00F75226 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		07D1305E2202B30A00D887A8 /* beep-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-04.wav"; sourceTree = "<group>"; };
 		07D130602202B31100D887A8 /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		07E686491E6A660D00B09760 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				071FFD49221F942500C087D6 /* DisplayTimer.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				07FA145C218557DB0012D190 /* Constants.swift in Sources */,
 				07FA145E21855B4B0012D190 /* HistoryVC.swift in Sources */,
 				07E686351E6A5E8F00B09760 /* StartController.swift in Sources */,
+				071FFD4A221F942500C087D6 /* DisplayTimer.swift in Sources */,
 				07FA146121858CDE0012D190 /* GestureExtension.swift in Sources */,
 				07E686331E6A5E8F00B09760 /* AppDelegate.swift in Sources */,
 			);
