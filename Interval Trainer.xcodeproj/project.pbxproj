@@ -10,6 +10,7 @@
 		070A1C1F220C119500C433D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A1C1E220C119500C433D4 /* AudioToolbox.framework */; };
 		071FFD4A221F942500C087D6 /* DisplayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FFD49221F942500C087D6 /* DisplayTimer.swift */; };
 		0734C06521869BDA00F75226 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734C06421869BDA00F75226 /* Timer.swift */; };
+		0767CFAE22225220002FC41E /* Laserian.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0767CFAD22225220002FC41E /* Laserian.ttf */; };
 		07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D1305E2202B30A00D887A8 /* beep-04.wav */; };
 		07D130612202B31100D887A8 /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D130602202B31100D887A8 /* beep-07.wav */; };
 		07E686331E6A5E8F00B09760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686321E6A5E8F00B09760 /* AppDelegate.swift */; };
@@ -18,7 +19,6 @@
 		07E6863B1E6A5E8F00B09760 /* Interval_Trainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07E686391E6A5E8F00B09760 /* Interval_Trainer.xcdatamodeld */; };
 		07E6863D1E6A5E8F00B09760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E6863C1E6A5E8F00B09760 /* Assets.xcassets */; };
 		07E686401E6A5E8F00B09760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E6863E1E6A5E8F00B09760 /* LaunchScreen.storyboard */; };
-		07E6864C1E6A662400B09760 /* LASER4.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 07E6864B1E6A662400B09760 /* LASER4.TTF */; };
 		07E6864E1E6ADC1700B09760 /* IntervalTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6864D1E6ADC1700B09760 /* IntervalTimerVC.swift */; };
 		07E686501E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */; };
 		07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */; };
@@ -32,6 +32,7 @@
 		070A1C1E220C119500C433D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		071FFD49221F942500C087D6 /* DisplayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTimer.swift; sourceTree = "<group>"; };
 		0734C06421869BDA00F75226 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		0767CFAD22225220002FC41E /* Laserian.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Laserian.ttf; path = ../../../../Downloads/laserian/Laserian.ttf; sourceTree = "<group>"; };
 		07D1305E2202B30A00D887A8 /* beep-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-04.wav"; sourceTree = "<group>"; };
 		07D130602202B31100D887A8 /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
 		07E6862F1E6A5E8F00B09760 /* Interval Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +43,6 @@
 		07E6863C1E6A5E8F00B09760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07E6863F1E6A5E8F00B09760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07E686411E6A5E8F00B09760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07E6864B1E6A662400B09760 /* LASER4.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = LASER4.TTF; sourceTree = "<group>"; };
 		07E6864D1E6ADC1700B09760 /* IntervalTimerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimerVC.swift; sourceTree = "<group>"; };
 		07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIntervalTrainerVC.swift; sourceTree = "<group>"; };
 		07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIntervalTrainersVC.swift; sourceTree = "<group>"; };
@@ -118,9 +118,9 @@
 		07E686471E6A65FC00B09760 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0767CFAD22225220002FC41E /* Laserian.ttf */,
 				07D130602202B31100D887A8 /* beep-07.wav */,
 				07D1305E2202B30A00D887A8 /* beep-04.wav */,
-				07E6864B1E6A662400B09760 /* LASER4.TTF */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -233,10 +233,10 @@
 			files = (
 				07E686401E6A5E8F00B09760 /* LaunchScreen.storyboard in Resources */,
 				07D130612202B31100D887A8 /* beep-07.wav in Resources */,
-				07E6864C1E6A662400B09760 /* LASER4.TTF in Resources */,
 				07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */,
 				07E6863D1E6A5E8F00B09760 /* Assets.xcassets in Resources */,
 				07E686381E6A5E8F00B09760 /* Main.storyboard in Resources */,
+				0767CFAE22225220002FC41E /* Laserian.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

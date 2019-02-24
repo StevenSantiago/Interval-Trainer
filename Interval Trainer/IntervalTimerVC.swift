@@ -38,33 +38,33 @@ class IntervalTimerVC: UIViewController {
         timerLbl.text = String(intervalTimer.minute) + ":" + String(format: "%02d",intervalTimer.second)
         timerLbl.adjustsFontSizeToFitWidth = false
         let originalFont = UIFont(name: "Laserian", size: 45)
-        var originalFontDescriptor = originalFont!.fontDescriptor
-        print(originalFontDescriptor)
+//        var originalFontDescriptor = originalFont!.fontDescriptor
+//        print(originalFontDescriptor)
+//
+//        let fontDescriptorFeatureSettings = [
+//            [
+//                UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType,
+//                UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector
+//            ]
+//        ]
+//
+//        let fontDescriptorFeatureSettingsT = [
+//            [
+//                UIFontDescriptor.FeatureKey.featureIdentifier:kAllTypographicFeaturesType,
+//                UIFontDescriptor.FeatureKey.typeIdentifier: kAllTypeFeaturesOnSelector
+//            ]
+//        ]
+//
+//        let fontDescriptorAttributes = [UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettings]
+//        originalFontDescriptor = originalFontDescriptor.addingAttributes(fontDescriptorAttributes)
+//        originalFontDescriptor = originalFontDescriptor.addingAttributes([UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettingsT])
+//        let fontDescriptor = originalFontDescriptor
+//
+//        print(fontDescriptor)
+//
+//        let font = UIFont(descriptor: fontDescriptor, size: 0.0)
 
-        let fontDescriptorFeatureSettings = [
-            [
-                UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType,
-                UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector
-            ]
-        ]
-        
-        let fontDescriptorFeatureSettingsT = [
-            [
-                UIFontDescriptor.FeatureKey.featureIdentifier:kAllTypographicFeaturesType,
-                UIFontDescriptor.FeatureKey.typeIdentifier: kAllTypeFeaturesOnSelector
-            ]
-        ]
-
-        let fontDescriptorAttributes = [UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettings]
-        originalFontDescriptor = originalFontDescriptor.addingAttributes(fontDescriptorAttributes)
-        originalFontDescriptor = originalFontDescriptor.addingAttributes([UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettingsT])
-        let fontDescriptor = originalFontDescriptor
-        
-        print(fontDescriptor)
-        
-        let font = UIFont(descriptor: fontDescriptor, size: 0.0)
-
-        timerLbl.font = font
+        timerLbl.font = originalFont
         
         numberOfSets.text = String(intervalTimer.sets)
         StartResumeBtn.setTitle("START", for: .normal)

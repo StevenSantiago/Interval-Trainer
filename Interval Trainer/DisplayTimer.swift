@@ -52,14 +52,18 @@ class DisplayTimer: UILabel {
 
         let font = UIFont(descriptor: fontDescriptor, size: 0.0)
 
-        self.font = font
+        self.font = originalFont
 
 
         
-//        let attributedString = NSMutableAttributedString(string: "111111111")
+//        let attributedString = NSMutableAttributedString(string: "123456789")
 //        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(1.5), range: NSRange(location: 0, length: 9))
 //
 //        self.attributedText = attributedString
-        self.adjustsFontSizeToFitWidth = true
+//
+//       self.adjustsFontSizeToFitWidth = true
     }
+    
 }
+
+
