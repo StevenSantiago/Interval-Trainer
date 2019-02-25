@@ -93,11 +93,12 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             if pickerView.tag == 1{
                 activeClock.hour = row
                 activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
-                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
                 activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
                 restClock.hour = row
+                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                
             }
         case 1:
             if pickerView.tag == 1{
@@ -108,16 +109,17 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
                 validUserInput()
             } else {
                 restClock.minute = row
+                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
             }
         case 2:
             if pickerView.tag == 1{
                 activeClock.second = row
                 activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
-                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
                 activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
                 restClock.second = row
+                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
             }
         default:
             break;
