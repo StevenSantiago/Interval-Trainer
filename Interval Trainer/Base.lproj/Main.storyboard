@@ -391,6 +391,7 @@
                     </view>
                     <connections>
                         <outlet property="activeTime" destination="sPS-cN-f54" id="g2E-5F-sqY"/>
+                        <outlet property="createBtn" destination="XYC-rB-OiQ" id="r2l-CW-mR4"/>
                         <outlet property="menuStackView" destination="MV3-Td-7ft" id="woH-HM-A6V"/>
                         <outlet property="numberOfSets" destination="tbj-Wc-eQl" id="hcm-61-nGY"/>
                         <outlet property="restTime" destination="x1I-Fo-ikc" id="Fde-OT-vHq"/>

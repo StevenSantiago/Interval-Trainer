@@ -19,6 +19,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var activeTime: UIPickerView!
     @IBOutlet weak var restTime: UIPickerView!
     @IBOutlet weak var menuStackView: UIStackView!
+    @IBOutlet weak var createBtn: UIButton!
     
     
     var activeClock = Timers(hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
@@ -35,20 +36,20 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         restTime.tag = 2
         restTime.delegate = self
         restTime.dataSource = self
+        createBtn.isEnabled = false
 //        menuStackView.setCustomSpacing(<#T##spacing: CGFloat##CGFloat#>, after: <#T##UIView#>)
         // Do any additional setup after loading the view.
     }
 
     @IBAction func startTimer(_ sender: Any) {
+        if(numberOfSets.text?.isEmpty == false ){
+        activeClock.sets = Int(numberOfSets.text!)!
         performSegue(withIdentifier: TO_START_TIMER, sender: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? IntervalTimerVC {
-            activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
-            activeClock.sets = Int(numberOfSets.text!)!
-            activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
-            activeClock.currentRunTime = activeClock.activeTime
             destination.intervalTimer = activeClock
         }
     }
@@ -91,18 +92,30 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         case 0:
             if pickerView.tag == 1{
                 activeClock.hour = row
+                activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
+                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                activeClock.currentRunTime = activeClock.activeTime
+                validUserInput()
             } else {
                 restClock.hour = row
             }
         case 1:
             if pickerView.tag == 1{
                 activeClock.minute = row
+                activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
+                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                activeClock.currentRunTime = activeClock.activeTime
+                validUserInput()
             } else {
                 restClock.minute = row
             }
         case 2:
             if pickerView.tag == 1{
                 activeClock.second = row
+                activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
+                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                activeClock.currentRunTime = activeClock.activeTime
+                validUserInput()
             } else {
                 restClock.second = row
             }
@@ -113,6 +126,14 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     func addTime(hours:Int,minutes:Int,seconds:Int) -> Int {
     return Int((hours*60*60) + (minutes*60) + (seconds))
+    }
+    
+    func validUserInput(){
+        if(numberOfSets.text?.isEmpty == false && activeClock.activeTime != 0){
+            createBtn.isEnabled = true
+        } else {
+        createBtn.isEnabled = false
+        }
     }
     
 
