@@ -25,43 +25,7 @@ class DisplayTimer: UILabel {
     
     func setUpLabel(){
         
-        let originalFont = UIFont(name: "Laserian", size: 45)
-        var originalFontDescriptor = originalFont!.fontDescriptor
-        //print(originalFontDescriptor)
 
-        let fontDescriptorFeatureSettings = [
-            [
-                UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType,
-                UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector
-            ]
-        ]
-
-        let fontDescriptorFeatureSettingsT = [
-            [
-                UIFontDescriptor.FeatureKey.featureIdentifier:kAllTypographicFeaturesType,
-                UIFontDescriptor.FeatureKey.typeIdentifier: kAllTypeFeaturesOnSelector
-            ]
-        ]
-
-        let fontDescriptorAttributes = [UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettings]
-        originalFontDescriptor = originalFontDescriptor.addingAttributes(fontDescriptorAttributes)
-        originalFontDescriptor = originalFontDescriptor.addingAttributes([UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettingsT])
-        let fontDescriptor = originalFontDescriptor
-
-        //print(fontDescriptor)
-
-        let font = UIFont(descriptor: fontDescriptor, size: 0.0)
-
-        self.font = originalFont
-
-
-        
-//        let attributedString = NSMutableAttributedString(string: "123456789")
-//        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(1.5), range: NSRange(location: 0, length: 9))
-//
-//        self.attributedText = attributedString
-//
-//       self.adjustsFontSizeToFitWidth = true
     }
     
 }

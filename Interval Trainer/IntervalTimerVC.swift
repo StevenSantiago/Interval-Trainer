@@ -32,39 +32,9 @@ class IntervalTimerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
-        //UIFont.monospacedDigitSystemFont(ofSize: 45.0, weight: .medium)
-
         navigationController!.navigationBar.isHidden = false
         timerLbl.text = String(intervalTimer.minute) + ":" + String(format: "%02d",intervalTimer.second)
         timerLbl.adjustsFontSizeToFitWidth = false
-        let originalFont = UIFont(name: "Laserian", size: 45)
-//        var originalFontDescriptor = originalFont!.fontDescriptor
-//        print(originalFontDescriptor)
-//
-//        let fontDescriptorFeatureSettings = [
-//            [
-//                UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType,
-//                UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector
-//            ]
-//        ]
-//
-//        let fontDescriptorFeatureSettingsT = [
-//            [
-//                UIFontDescriptor.FeatureKey.featureIdentifier:kAllTypographicFeaturesType,
-//                UIFontDescriptor.FeatureKey.typeIdentifier: kAllTypeFeaturesOnSelector
-//            ]
-//        ]
-//
-//        let fontDescriptorAttributes = [UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettings]
-//        originalFontDescriptor = originalFontDescriptor.addingAttributes(fontDescriptorAttributes)
-//        originalFontDescriptor = originalFontDescriptor.addingAttributes([UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettingsT])
-//        let fontDescriptor = originalFontDescriptor
-//
-//        print(fontDescriptor)
-//
-//        let font = UIFont(descriptor: fontDescriptor, size: 0.0)
-
-        timerLbl.font = originalFont
         
         numberOfSets.text = String(intervalTimer.sets)
         StartResumeBtn.setTitle("START", for: .normal)
@@ -161,23 +131,4 @@ class IntervalTimerVC: UIViewController {
     
 }
 
-//extension UIFont {
-//
-//    var monospacedDigitFont: UIFont {
-//        let oldFontDescriptor = fontDescriptor
-//        let newFontDescriptor = oldFontDescriptor.monospacedDigitFontDescriptor
-//        return UIFont(descriptor: newFontDescriptor, size: 0)
-//    }
-//
-//}
-//
-//private extension UIFontDescriptor {
-//
-//    var monospacedDigitFontDescriptor: UIFontDescriptor {
-//        let fontDescriptorFeatureSettings = [[UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType, UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector]]
-//        let fontDescriptorAttributes = [UIFontDescriptor.AttributeName.featureSettings: fontDescriptorFeatureSettings]
-//        let fontDescriptor = self.addingAttributes(fontDescriptorAttributes)
-//        return fontDescriptor
-//    }
-//
-//}
+
