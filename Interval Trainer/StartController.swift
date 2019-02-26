@@ -14,14 +14,6 @@ class StartController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        for family in UIFont.familyNames {
-            print("\(family)")
-            
-            for name in UIFont.fontNames(forFamilyName: family) {
-                print("   \(name)")
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
