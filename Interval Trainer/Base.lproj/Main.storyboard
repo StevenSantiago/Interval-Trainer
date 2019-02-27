@@ -316,6 +316,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
+                                <connections>
+                                    <action selector="checkInput:" destination="KOX-cM-ASF" eventType="editingDidEnd" id="73n-Os-pZT"/>
+                                </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPS-cN-f54">
                                 <rect key="frame" x="186" y="167" width="192" height="51"/>

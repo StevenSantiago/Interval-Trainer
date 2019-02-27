@@ -42,10 +42,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     }
 
     @IBAction func startTimer(_ sender: Any) {
-        if(numberOfSets.text?.isEmpty == false ){
-        activeClock.sets = Int(numberOfSets.text!)!
         performSegue(withIdentifier: TO_START_TIMER, sender: nil)
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -133,9 +130,13 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     return Int((hours*60*60) + (minutes*60) + (seconds))
     }
     
+    @IBAction func checkInput(_ sender: UITextField) {
+        validUserInput()
+    }
     func validUserInput(){
         if(numberOfSets.text?.isEmpty == false && activeClock.activeTime != 0 && activeClock.restTime != 0){
             createBtn.isEnabled = true
+            activeClock.sets = Int(numberOfSets.text!)!
         } else {
         createBtn.isEnabled = false
         }
