@@ -374,9 +374,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYC-rB-OiQ">
-                                <rect key="frame" x="153.66666666666666" y="688" width="106.99999999999997" height="28"/>
+                                <rect key="frame" x="142.66666666666666" y="688" width="128.99999999999997" height="28"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
-                                <state key="normal" title="START"/>
+                                <state key="normal" title="CREATE"/>
                                 <connections>
                                     <action selector="startTimer:" destination="KOX-cM-ASF" eventType="touchUpInside" id="2wn-5F-Mck"/>
                                 </connections>
