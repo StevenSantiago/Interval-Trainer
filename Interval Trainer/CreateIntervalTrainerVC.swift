@@ -98,6 +98,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             } else {
                 restClock.hour = row
                 activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                validUserInput()
                 
             }
         case 1:
@@ -110,6 +111,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             } else {
                 restClock.minute = row
                 activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                validUserInput()
             }
         case 2:
             if pickerView.tag == 1{
@@ -120,6 +122,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             } else {
                 restClock.second = row
                 activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                validUserInput()
             }
         default:
             break;
@@ -131,7 +134,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     }
     
     func validUserInput(){
-        if(numberOfSets.text?.isEmpty == false && activeClock.activeTime != 0){
+        if(numberOfSets.text?.isEmpty == false && activeClock.activeTime != 0 && activeClock.restTime != 0){
             createBtn.isEnabled = true
         } else {
         createBtn.isEnabled = false
