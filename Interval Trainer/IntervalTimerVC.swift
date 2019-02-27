@@ -83,7 +83,6 @@ class IntervalTimerVC: UIViewController {
                         intervalTimer.endOfSession()
                         timer.invalidate()
                         timerLbl.text = "Complete!"
-                        //timerLbl.adjustsFontSizeToFitWidth = true
                         StartResumeBtn.isHidden = false
                     } else{
                         updateTimerLbl()
