@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		070A1C1F220C119500C433D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A1C1E220C119500C433D4 /* AudioToolbox.framework */; };
 		071FFD4A221F942500C087D6 /* DisplayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FFD49221F942500C087D6 /* DisplayTimer.swift */; };
+		072D3B7922279F8A006D291D /* SavedTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D3B7822279F8A006D291D /* SavedTimer.swift */; };
 		0734C06521869BDA00F75226 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734C06421869BDA00F75226 /* Timer.swift */; };
 		0767CFAE22225220002FC41E /* Laserian.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0767CFAD22225220002FC41E /* Laserian.ttf */; };
 		07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D1305E2202B30A00D887A8 /* beep-04.wav */; };
@@ -31,6 +32,7 @@
 		070A1C1C220C119500C433D4 /* Interval Trainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Interval Trainer.entitlements"; sourceTree = "<group>"; };
 		070A1C1E220C119500C433D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		071FFD49221F942500C087D6 /* DisplayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTimer.swift; sourceTree = "<group>"; };
+		072D3B7822279F8A006D291D /* SavedTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTimer.swift; sourceTree = "<group>"; };
 		0734C06421869BDA00F75226 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		0767CFAD22225220002FC41E /* Laserian.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Laserian.ttf; path = ../../../../Downloads/laserian/Laserian.ttf; sourceTree = "<group>"; };
 		07D1305E2202B30A00D887A8 /* beep-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-04.wav"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				071FFD49221F942500C087D6 /* DisplayTimer.swift */,
+				072D3B7822279F8A006D291D /* SavedTimer.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				07E6863B1E6A5E8F00B09760 /* Interval_Trainer.xcdatamodeld in Sources */,
 				07E686501E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift in Sources */,
 				07E6864E1E6ADC1700B09760 /* IntervalTimerVC.swift in Sources */,
+				072D3B7922279F8A006D291D /* SavedTimer.swift in Sources */,
 				0734C06521869BDA00F75226 /* Timer.swift in Sources */,
 				07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */,
 				07FA145C218557DB0012D190 /* Constants.swift in Sources */,

@@ -8,29 +8,25 @@
 
 import UIKit
 
-class SavedIntervalTrainersVC: UIViewController {
+class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
+    @IBOutlet weak var savedTimers: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.isHidden = false
-
-        // Do any additional setup after loading the view.
+        savedTimers.dataSource = self
+        savedTimers.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell", for: indexPath) as! SavedTimer
+        return cell
     }
-    */
 
 }
