@@ -24,6 +24,7 @@ class DisplayTimer: UILabel {
     }
     
     func setUpLabel(){
+        self.font = UIFont(name: "Laserian", size: 45.0)
         self.adjustsFontSizeToFitWidth = true
     }
     
