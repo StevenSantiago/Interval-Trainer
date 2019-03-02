@@ -15,6 +15,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
  
    
+    @IBOutlet weak var timerName: UITextField!
     @IBOutlet weak var numberOfSets: UITextField!
     @IBOutlet weak var activeTime: UIPickerView!
     @IBOutlet weak var restTime: UIPickerView!
