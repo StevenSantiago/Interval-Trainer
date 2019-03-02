@@ -9,6 +9,7 @@
 import Foundation
 
 struct Timers {
+    var name:String
     var hour:Int // hours,minutes and seconds might be redudant fields. Look into this
     var minute:Int
     var second:Int
@@ -17,7 +18,8 @@ struct Timers {
     var currentRunTime:Int
     var sets:Int
     
-    init(hour:Int,minute:Int,second:Int,restTime:Int,activeTime:Int,currentRunTime:Int,sets:Int) {
+    init(name:String,hour:Int,minute:Int,second:Int,restTime:Int,activeTime:Int,currentRunTime:Int,sets:Int) {
+        self.name = name
         self.hour = hour
         self.minute = minute
         self.second = second

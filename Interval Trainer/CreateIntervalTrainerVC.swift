@@ -23,8 +23,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var createBtn: UIButton!
     
     
-    var activeClock = Timers(hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
-    var restClock = Timers(hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0) // really only need to store h,m,s
+    var activeClock = Timers(name:"Timer1",hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
+    var restClock = Timers(name:"Timer2",hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0) // really only need to store h,m,s
     
     override func viewDidLoad() {
         super.viewDidLoad()

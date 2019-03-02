@@ -17,7 +17,7 @@ class TimerCell: UITableViewCell {
     
     
     func setTimerCell(timer: Timers){
-        InteralTimerName.text = "Example Timer"
+        InteralTimerName.text = timer.name
         self.sets.text = String(timer.sets)
         self.activeTime.text = String(timer.activeTime)
         self.restTime.text = String(timer.restTime)
