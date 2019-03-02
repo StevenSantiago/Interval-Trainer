@@ -400,7 +400,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-6E-gi5">
-                                <rect key="frame" x="170" y="81.000000000000028" width="244" height="380.66666666666674"/>
+                                <rect key="frame" x="170" y="80.999999999999972" width="244" height="355.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jump Rope" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-mh-VQQ">
                                         <rect key="frame" x="20" y="0.0" width="204" height="30"/>
@@ -418,33 +418,33 @@
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nlJ-JL-Yck">
-                                        <rect key="frame" x="0.0" y="180" width="244" height="70.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="180" width="244" height="57.666666666666657"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-9r-iDk">
-                                                <rect key="frame" x="59.33333333333335" y="0.0" width="125.66666666666669" height="20.333333333333332"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-9r-iDk">
+                                                <rect key="frame" x="36" y="0.0" width="172" height="7.666666666666667"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hrs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJS-i9-o1p">
-                                                        <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJS-i9-o1p">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="7.666666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bq3-PL-3SY">
-                                                        <rect key="frame" x="47.666666666666657" y="0.0" width="28" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bq3-PL-3SY">
+                                                        <rect key="frame" x="70.666666666666686" y="0.0" width="30.666666666666671" height="7.666666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYb-6H-qfS">
-                                                        <rect key="frame" x="96.666666666666657" y="0.0" width="29" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYb-6H-qfS">
+                                                        <rect key="frame" x="141.33333333333331" y="0.0" width="30.666666666666657" height="7.666666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPS-cN-f54">
-                                                <rect key="frame" x="0.0" y="20.333333333333314" width="244" height="50"/>
+                                                <rect key="frame" x="0.0" y="7.6666666666666856" width="244" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="OQR-0q-Jqz"/>
                                                 </constraints>
@@ -452,33 +452,33 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nEe-ca-0mf">
-                                        <rect key="frame" x="0.0" y="310.33333333333331" width="244" height="70.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="297.66666666666669" width="244" height="57.666666666666686"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-ZC-kZp">
-                                                <rect key="frame" x="55.666666666666657" y="0.0" width="133" height="20.333333333333332"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-ZC-kZp">
+                                                <rect key="frame" x="36" y="0.0" width="172" height="7.666666666666667"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-dy-gPL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="29" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="7.666666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-hN-1XK">
-                                                        <rect key="frame" x="52.000000000000028" y="0.0" width="29" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="70.666666666666686" y="0.0" width="30.666666666666671" height="7.666666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-Jl-533">
-                                                        <rect key="frame" x="104.00000000000003" y="0.0" width="29" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="141.33333333333331" y="0.0" width="30.666666666666657" height="7.666666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1I-Fo-ikc">
-                                                <rect key="frame" x="0.0" y="20.333333333333371" width="244" height="50"/>
+                                                <rect key="frame" x="0.0" y="7.6666666666666288" width="244" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VST-B8-Vmp"/>
                                                 </constraints>
