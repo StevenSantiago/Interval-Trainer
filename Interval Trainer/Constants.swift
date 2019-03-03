@@ -13,4 +13,5 @@ let TO_SAVED_INTERVAL_TRAINER = "SavedIntervalTrainersVC"
 let TO_INTERVAL_TIMER = "IntervalTimerVC"
 let TO_HISTORY = "HistoryVC"
 let TO_START_TIMER = "FromIntervalVC"
+let FROM_SAVED_TO_INTERVAL_TIMER = "FromSavedTimerVC"
 

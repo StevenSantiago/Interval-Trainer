@@ -105,7 +105,7 @@
         <!--IntervalTimerVC-->
         <scene sceneID="Hun-xK-nOs">
             <objects>
-                <viewController storyboardIdentifier="QuickStartVC" title="IntervalTimerVC" id="PbS-7n-qps" customClass="IntervalTimerVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerStart" title="IntervalTimerVC" id="PbS-7n-qps" customClass="IntervalTimerVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Il6-Ms-byq"/>
                         <viewControllerLayoutGuide type="bottom" id="UKG-V9-HDl"/>
@@ -235,17 +235,17 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1p2-sG-sSf">
-                                                    <rect key="frame" x="293" y="8" width="76" height="33.666666666666671"/>
+                                                    <rect key="frame" x="211" y="9" width="182.66666666666663" height="33.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPF-0q-6bo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="9.3333333333333339"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active: 0:00:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPF-0q-6bo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="9.3333333333333339"/>
                                                             <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-WU-QaI">
-                                                            <rect key="frame" x="0.0" y="24.333333333333332" width="76" height="9.3333333333333321"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest :  0:00:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-WU-QaI">
+                                                            <rect key="frame" x="0.0" y="24.333333333333332" width="182.66666666666666" height="9.3333333333333321"/>
                                                             <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -534,6 +534,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LD6-rt-3Nh"/>
+        <segue reference="gvO-qJ-yow"/>
     </inferredMetricsTieBreakers>
 </document>

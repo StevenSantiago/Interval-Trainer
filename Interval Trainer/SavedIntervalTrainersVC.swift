@@ -23,6 +23,10 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         timers = createTimers()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     func createTimers() -> [Timers] {
         var tempTimers:[Timers] = []
         
@@ -47,5 +51,13 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         cell.setTimerCell(timer: timer)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let item = timers[indexPath.row]
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "TimerStart") as! IntervalTimerVC
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
+    
 
 }
