@@ -4,9 +4,7 @@
 //
 //  Created by Steven Santiago on 3/4/17.
 //  Copyright © 2017 Steven Santiago. All rights reserved.
-//TODO: 1.Find better name for controller. DONE!
-//      2.Keep Cleaning up code to follow MVC and reduce redundancy
-//      3.Fix the constant resizing of the timerlbl on certain number. Will need a model file to focus on this
+
 
 import UIKit
 import AVFoundation
