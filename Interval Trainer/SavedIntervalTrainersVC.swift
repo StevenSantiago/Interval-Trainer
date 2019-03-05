@@ -4,7 +4,7 @@
 //
 //  Created by Steven Santiago on 3/4/17.
 //  Copyright © 2017 Steven Santiago. All rights reserved.
-//
+// TODO: Need to load tableview with saved data
 
 import UIKit
 import CoreData
@@ -32,6 +32,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         do{
             let intervalTImers = try context.fetch(fetchRequest)
             self.intervalTImers = intervalTImers
+            self.savedTimers.reloadData()
         } catch{
             print(error)
         }
