@@ -11,6 +11,8 @@
 		071FFD4A221F942500C087D6 /* DisplayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FFD49221F942500C087D6 /* DisplayTimer.swift */; };
 		072D3B7922279F8A006D291D /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D3B7822279F8A006D291D /* TimerCell.swift */; };
 		0734C06521869BDA00F75226 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734C06421869BDA00F75226 /* Timer.swift */; };
+		07CA7261222E39EB00D5B834 /* IntervalTimer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA725F222E39EB00D5B834 /* IntervalTimer+CoreDataClass.swift */; };
+		07CA7262222E39EB00D5B834 /* IntervalTimer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA7260222E39EB00D5B834 /* IntervalTimer+CoreDataProperties.swift */; };
 		07D1305F2202B30A00D887A8 /* beep-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D1305E2202B30A00D887A8 /* beep-04.wav */; };
 		07D130612202B31100D887A8 /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 07D130602202B31100D887A8 /* beep-07.wav */; };
 		07E686331E6A5E8F00B09760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686321E6A5E8F00B09760 /* AppDelegate.swift */; };
@@ -34,6 +36,8 @@
 		071FFD49221F942500C087D6 /* DisplayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTimer.swift; sourceTree = "<group>"; };
 		072D3B7822279F8A006D291D /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		0734C06421869BDA00F75226 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		07CA725F222E39EB00D5B834 /* IntervalTimer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntervalTimer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07CA7260222E39EB00D5B834 /* IntervalTimer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntervalTimer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07D1305E2202B30A00D887A8 /* beep-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-04.wav"; sourceTree = "<group>"; };
 		07D130602202B31100D887A8 /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
 		07E6862F1E6A5E8F00B09760 /* Interval Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,8 @@
 				07E6863C1E6A5E8F00B09760 /* Assets.xcassets */,
 				07E6863E1E6A5E8F00B09760 /* LaunchScreen.storyboard */,
 				07E686411E6A5E8F00B09760 /* Info.plist */,
+				07CA725F222E39EB00D5B834 /* IntervalTimer+CoreDataClass.swift */,
+				07CA7260222E39EB00D5B834 /* IntervalTimer+CoreDataProperties.swift */,
 				07E686391E6A5E8F00B09760 /* Interval_Trainer.xcdatamodeld */,
 			);
 			path = "Interval Trainer";
@@ -252,11 +258,13 @@
 			files = (
 				07E6863B1E6A5E8F00B09760 /* Interval_Trainer.xcdatamodeld in Sources */,
 				07E686501E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift in Sources */,
+				07CA7261222E39EB00D5B834 /* IntervalTimer+CoreDataClass.swift in Sources */,
 				07E6864E1E6ADC1700B09760 /* IntervalTimerVC.swift in Sources */,
 				072D3B7922279F8A006D291D /* TimerCell.swift in Sources */,
 				0734C06521869BDA00F75226 /* Timer.swift in Sources */,
 				07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */,
 				07FA145C218557DB0012D190 /* Constants.swift in Sources */,
+				07CA7262222E39EB00D5B834 /* IntervalTimer+CoreDataProperties.swift in Sources */,
 				07FA145E21855B4B0012D190 /* HistoryVC.swift in Sources */,
 				07E686351E6A5E8F00B09760 /* StartController.swift in Sources */,
 				071FFD4A221F942500C087D6 /* DisplayTimer.swift in Sources */,

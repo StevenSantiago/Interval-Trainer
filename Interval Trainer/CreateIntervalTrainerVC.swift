@@ -41,8 +41,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
 //        menuStackView.setCustomSpacing(<#T##spacing: CGFloat##CGFloat#>, after: <#T##UIView#>)
         // Do any additional setup after loading the view.
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+        
     }
 
     @IBAction func startTimer(_ sender: Any) {
@@ -52,7 +51,14 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? IntervalTimerVC {
             destination.intervalTimer = activeClock
-            //let entity = NSEntityDescription.entity
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let intervalT = IntervalTimer(context: context)
+            intervalT.activeTime = Int32(activeClock.activeTime)
+            intervalT.name = activeClock.name
+            intervalT.restTime = Int32(activeClock.restTime)
+            intervalT.sets = Int16(activeClock.sets)
+            appDelegate.saveContext()
         }
     }
     
