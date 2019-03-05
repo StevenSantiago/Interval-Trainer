@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var savedTimers: UITableView!
     
     var timers:[Timers] = []
+    var intervalTImers:[IntervalTimer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,20 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         savedTimers.delegate = self
         
         timers = createTimers()
+        
+        let fetchRequest: NSFetchRequest<IntervalTimer> = IntervalTimer.fetchRequest()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do{
+            let intervalTImers = try context.fetch(fetchRequest)
+            self.intervalTImers = intervalTImers
+        } catch{
+            print(error)
+        }
+        
+        
     }
     
     //This is for testing purposes. Creating will come from database store call from CreateIntervalTimer VC
