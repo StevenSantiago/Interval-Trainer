@@ -32,7 +32,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         do{
             let intervalTImers = try context.fetch(fetchRequest)
             self.intervalTImers = intervalTImers
-            self.savedTimers.reloadData()
+            self.savedTimers.reloadData() 
         } catch{
             print(error)
         }
