@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 //Controller Identifiers!
 let TO_CREATE_INTERVAL_TRAINER = "CreateIntervalTrainerVC"
 let TO_SAVED_INTERVAL_TRAINER = "SavedIntervalTrainersVC"
@@ -15,3 +16,5 @@ let TO_HISTORY = "HistoryVC"
 let TO_START_TIMER = "FromIntervalVC"
 let FROM_SAVED_TO_INTERVAL_TIMER = "FromSavedTimerVC"
 
+//Gloabl variables
+let appDelegate = UIApplication.shared.delegate as? AppDelegate

@@ -9,8 +9,6 @@
 import UIKit
 
 
-let appDelegate = UIApplication.shared.delegate as? AppDelegate
-
 class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
 
@@ -51,17 +49,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        save { (complete) in
-//            if complete{
-//                if let destination = segue.destination as? IntervalTimerVC {
-//                    destination.intervalTimer = activeClock
-//                }
-//            }
-//        }
-        
         if let destination = segue.destination as? IntervalTimerVC {
             destination.intervalTimer = activeClock
-            save()
+            save()// move to startTimer function?
         }
         
     }
@@ -169,25 +159,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         appDelegate?.saveContext()
     }
     
-//
-//    func save(completion: (_ finished: Bool) ->()) {
-//        guard let managedContext = appDelegate?.persistentContainer.viewContext else{return}
-//        let intervalT = IntervalTimer(context: managedContext)
-//        intervalT.activeTime = Int32(activeClock.activeTime)
-//        intervalT.name = activeClock.name
-//        intervalT.restTime = Int32(activeClock.restTime)
-//        intervalT.sets = Int16(activeClock.sets)
-//
-//
-//        do{
-//            try managedContext.save()
-//            print("Succesfully Saved Timer")
-//            completion(true)
-//        } catch{
-//            debugPrint("Could not save:  \(error.localizedDescription)")
-//            completion(false)
-//        }
-//    }
     
 
 }
