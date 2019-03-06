@@ -14,7 +14,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var savedTimers: UITableView!
     
     var timers:[Timers] = []
-    var intervalTImers:[IntervalTimer] = []
+    var intervalTimers:[IntervalTimer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,8 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         let context = appDelegate.persistentContainer.viewContext
         
         do{
-            let intervalTImers = try context.fetch(fetchRequest)
-            self.intervalTImers = intervalTImers
+            let intervalTimers = try context.fetch(fetchRequest)
+            self.intervalTimers = intervalTimers
             self.savedTimers.reloadData() 
         } catch{
             print(error)
@@ -56,23 +56,27 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timers.count
+        return intervalTimers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let timer = timers[indexPath.row]
+        let timer = intervalTimers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell", for: indexPath) as! TimerCell
         cell.setTimerCell(timer: timer)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = timers[indexPath.row]
+        let item = intervalTimers[indexPath.row]
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "TimerStart") as! IntervalTimerVC
-        secondViewController.intervalTimer = item
+        //secondViewController.intervalTimer = item
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
+    
+    func fetch(completion: (_ complete: Bool) -> ()){
+        
+    }
     
 
 }

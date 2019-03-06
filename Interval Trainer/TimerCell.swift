@@ -16,7 +16,7 @@ class TimerCell: UITableViewCell {
     @IBOutlet weak var restTime: UILabel!
     
     
-    func setTimerCell(timer: Timers){
+    func setTimerCell(timer: IntervalTimer){
         InteralTimerName.text = timer.name
         self.sets.text = "Sets: " + String(timer.sets)
         self.activeTime.text = "Active: " + String(timer.activeTime)
