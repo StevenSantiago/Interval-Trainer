@@ -20,6 +20,7 @@ class IntervalTimerVC: UIViewController {
     
     var intervalTimer = Timers(name:"Empty", hour: 0, minute: 0, second: 45, restTime: 12, activeTime: 45, currentRunTime: 45, sets: 10)
     
+    
     var HMS:(Int,Int,Int) = (0,0,0)
     
     var timer = Timer()
@@ -31,7 +32,7 @@ class IntervalTimerVC: UIViewController {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
-        timerLbl.text = String(intervalTimer.minute) + ":" + String(format: "%02d",intervalTimer.second)
+        updateTimerLbl()
         timerLbl.adjustsFontSizeToFitWidth = false
         
         numberOfSets.text = String(intervalTimer.sets)

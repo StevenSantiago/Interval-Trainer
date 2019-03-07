@@ -51,7 +51,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return UITableViewCell.EditingStyle.delete
+        return UITableViewCell.EditingStyle.delete//Currently does not do anything due to UITableViewRowAction
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -79,7 +79,11 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = intervalTimers[indexPath.row]
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "TimerStart") as! IntervalTimerVC
-        //secondViewController.intervalTimer = item
+        secondViewController.intervalTimer.name = item.name!
+        secondViewController.intervalTimer.sets = Int(item.sets)
+        secondViewController.intervalTimer.currentRunTime = Int(item.activeTime)
+        secondViewController.intervalTimer.restTime = Int(item.restTime)
+        
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
