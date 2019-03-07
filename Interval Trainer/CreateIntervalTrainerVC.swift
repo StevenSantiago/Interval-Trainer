@@ -142,7 +142,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         if(numberOfSets.text?.isEmpty == false && activeClock.activeTime != 0 && activeClock.restTime != 0){
             createBtn.isEnabled = true
             activeClock.sets = Int(numberOfSets.text!)!
-            activeClock.name = String(timerName.text!)
+            activeClock.name = String(timerName.text!)// will need to check it has name or give default name
         } else {
         createBtn.isEnabled = false
         }
