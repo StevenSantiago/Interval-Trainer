@@ -36,6 +36,7 @@ class IntervalTimerVC: UIViewController {
         timerLbl.adjustsFontSizeToFitWidth = false
         
         numberOfSets.text = String(intervalTimer.sets)
+        StopBtn.isHidden = true
         StartResumeBtn.setTitle("START", for: .normal)
         StartResumeBtn.titleLabel?.sizeToFit()
         let repetitionEndSound = Bundle.main.path(forResource: "beep-07", ofType: "wav")
@@ -82,7 +83,8 @@ class IntervalTimerVC: UIViewController {
                         intervalTimer.endOfSession()
                         timer.invalidate()
                         timerLbl.text = "Complete!"
-                        StartResumeBtn.isHidden = false
+                        //StartResumeBtn.isHidden = false
+                        StopBtn.isHidden = true
                     } else{
                         updateTimerLbl()
                     }
