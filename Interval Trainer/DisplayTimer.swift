@@ -15,15 +15,15 @@ class DisplayTimer: UILabel {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpLabel()
+        updateLabel()
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setUpLabel()
+        updateLabel()
     }
     
-    func setUpLabel(){
+    func updateLabel(){
         self.font = UIFont(name: "Laserian", size: 45.0)
         self.adjustsFontSizeToFitWidth = true
     }

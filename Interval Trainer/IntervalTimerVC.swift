@@ -23,6 +23,7 @@ class IntervalTimerVC: UIViewController {
     
     var HMS:(Int,Int,Int) = (0,0,0)
     
+    var customLabel = DisplayTimer()
     var timer = Timer()
     var active = true
     var audioPlayer = AVAudioPlayer()
@@ -32,6 +33,7 @@ class IntervalTimerVC: UIViewController {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
+        customLabel = timerLbl as! DisplayTimer
         updateTimerLbl()
         timerLbl.adjustsFontSizeToFitWidth = false
         
@@ -83,7 +85,7 @@ class IntervalTimerVC: UIViewController {
                         intervalTimer.endOfSession()
                         timer.invalidate()
                         timerLbl.text = "Complete!"
-                        //StartResumeBtn.isHidden = false
+                        customLabel.updateLabel()
                         StopBtn.isHidden = true
                     } else{
                         updateTimerLbl()
