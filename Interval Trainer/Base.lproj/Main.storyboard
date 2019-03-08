@@ -403,14 +403,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-6E-gi5">
                                 <rect key="frame" x="170" y="80.999999999999972" width="244" height="355.33333333333326"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jump Rope" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-mh-VQQ">
-                                        <rect key="frame" x="20" y="0.0" width="204" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-mh-VQQ">
+                                        <rect key="frame" x="106.66666666666669" y="0.0" width="31" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tbj-Wc-eQl">
-                                        <rect key="frame" x="89.666666666666686" y="90" width="65" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tbj-Wc-eQl">
+                                        <rect key="frame" x="106.66666666666669" y="90" width="31" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
@@ -455,7 +455,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nEe-ca-0mf">
                                         <rect key="frame" x="0.0" y="297.66666666666669" width="244" height="57.666666666666686"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFit" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-ZC-kZp">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-ZC-kZp">
                                                 <rect key="frame" x="36" y="0.0" width="172" height="7.666666666666667"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-dy-gPL">
@@ -535,6 +535,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gvO-qJ-yow"/>
+        <segue reference="LD6-rt-3Nh"/>
     </inferredMetricsTieBreakers>
 </document>
