@@ -11,10 +11,6 @@ import UIKit
 
 class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
-
-    
- 
-   
     @IBOutlet weak var timerName: UITextField!
     @IBOutlet weak var numberOfSets: UITextField!
     @IBOutlet weak var activeTime: UIPickerView!
@@ -38,10 +34,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         restTime.delegate = self
         restTime.dataSource = self
         createBtn.isEnabled = false
-//        menuStackView.setCustomSpacing(<#T##spacing: CGFloat##CGFloat#>, after: <#T##UIView#>)
-        // Do any additional setup after loading the view.
-        
-        
     }
 
     @IBAction func startTimer(_ sender: Any) {
@@ -139,7 +131,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         validUserInput()
     }
     func validUserInput(){
-        if(numberOfSets.text?.isEmpty == false && activeClock.activeTime != 0 && activeClock.restTime != 0){
+        if(numberOfSets.text?.isEmpty == false && timerName.text?.isEmpty == false && activeClock.activeTime != 0 && activeClock.restTime != 0){
             createBtn.isEnabled = true
             activeClock.sets = Int(numberOfSets.text!)!
             activeClock.name = String(timerName.text!)// will need to check it has name or give default name

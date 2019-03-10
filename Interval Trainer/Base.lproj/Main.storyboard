@@ -403,11 +403,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-6E-gi5">
                                 <rect key="frame" x="170" y="80.999999999999972" width="244" height="355.33333333333326"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-mh-VQQ">
-                                        <rect key="frame" x="106.66666666666669" y="0.0" width="31" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Untitled" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-mh-VQQ">
+                                        <rect key="frame" x="25" y="0.0" width="194" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="checkInput:" destination="KOX-cM-ASF" eventType="editingDidEnd" id="a0a-SU-iBJ"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tbj-Wc-eQl">
                                         <rect key="frame" x="106.66666666666669" y="90" width="31" height="30"/>
