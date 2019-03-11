@@ -35,7 +35,11 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         restTime.dataSource = self
         createBtn.isEnabled = false
     }
-
+    @IBAction func setasQuickstart(_ sender: Any) {
+        print("Switch was hit!")
+        //Code in here will set this timer to be the quickstart
+    }
+    
     @IBAction func startTimer(_ sender: Any) {
         performSegue(withIdentifier: TO_START_TIMER, sender: nil)
     }
