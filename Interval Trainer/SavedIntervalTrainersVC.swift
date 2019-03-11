@@ -17,6 +17,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController!.navigationBar.isHidden = false
         savedTimers.dataSource = self
         savedTimers.delegate = self

@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1377" y="122"/>
         </scene>
-        <!--IntervalTimerVC-->
+        <!--Interval TimerVC-->
         <scene sceneID="Hun-xK-nOs">
             <objects>
-                <viewController storyboardIdentifier="TimerStart" title="IntervalTimerVC" id="PbS-7n-qps" customClass="IntervalTimerVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerStart" id="PbS-7n-qps" customClass="IntervalTimerVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Il6-Ms-byq"/>
                         <viewControllerLayoutGuide type="bottom" id="UKG-V9-HDl"/>
@@ -356,7 +356,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="MV3-Td-7ft">
-                                <rect key="frame" x="20" y="94" width="140" height="317.33333333333331"/>
+                                <rect key="frame" x="20" y="50" width="140" height="317.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXV-v6-21N">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="9.3333333333333339"/>
@@ -383,7 +383,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsR-3J-Vf5">
-                                                <rect key="frame" x="0.0" y="129.33333333333331" width="76" height="9.3333333333333428"/>
+                                                <rect key="frame" x="0.0" y="129.33333333333334" width="76" height="9.3333333333333428"/>
                                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -401,7 +401,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-6E-gi5">
-                                <rect key="frame" x="170" y="80.999999999999972" width="244" height="355.33333333333326"/>
+                                <rect key="frame" x="170" y="37" width="244" height="355.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Untitled" borderStyle="roundedRect" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-mh-VQQ">
                                         <rect key="frame" x="25" y="0.0" width="194" height="30"/>
@@ -448,7 +448,7 @@
                                                 </subviews>
                                             </stackView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPS-cN-f54">
-                                                <rect key="frame" x="0.0" y="7.6666666666666856" width="244" height="50"/>
+                                                <rect key="frame" x="0.0" y="7.6666666666666572" width="244" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="OQR-0q-Jqz"/>
                                                 </constraints>
@@ -504,6 +504,7 @@
                             <constraint firstItem="XYC-rB-OiQ" firstAttribute="centerX" secondItem="0JR-hP-7cX" secondAttribute="centerX" id="zQu-KI-FDw"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="activeTime" destination="sPS-cN-f54" id="g2E-5F-sqY"/>
                         <outlet property="createBtn" destination="XYC-rB-OiQ" id="r2l-CW-mR4"/>
@@ -538,6 +539,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LD6-rt-3Nh"/>
+        <segue reference="gvO-qJ-yow"/>
     </inferredMetricsTieBreakers>
 </document>
