@@ -40,5 +40,9 @@ class StartController: UIViewController {
         performSegue(withIdentifier: TO_HISTORY, sender: nil)
     }
     
+    func lookForDefaultTimer(){
+        // Code that will look for default timer and if there is then pass over that data when quick start is hit
+    }
+    
 }
 

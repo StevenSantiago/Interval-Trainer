@@ -18,6 +18,7 @@ extension IntervalTimer {
     }
 
     @NSManaged public var activeTime: Int32
+    @NSManaged public var isDefault: Bool
     @NSManaged public var name: String?
     @NSManaged public var restTime: Int32
     @NSManaged public var sets: Int16
