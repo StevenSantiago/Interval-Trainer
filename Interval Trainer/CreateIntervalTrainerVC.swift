@@ -7,6 +7,7 @@
 //GOod
 
 import UIKit
+import CoreData
 
 
 class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
@@ -22,6 +23,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     var activeClock = Timers(name:"Timer1",hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
     var restClock = Timers(name:"Timer2",hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0) // really only need to store h,m,s
+    
+    var fetchedTimers:[IntervalTimer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,8 +148,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         }
     }
     
-    
-    
     func save(){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else{return}
         let intervalT = IntervalTimer(context: managedContext)
@@ -157,6 +158,28 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         intervalT.isDefault = quickStartSwitch.isOn
         print("Default values is: \(quickStartSwitch.isOn)")
         appDelegate?.saveContext()
+        //oneDefaultTimer()
+    }
+    
+    //Will change any timer that has isDefault value to true except the one that was just created
+    func oneDefaultTimer(){
+        let fetchRequest: NSFetchRequest<IntervalTimer> = IntervalTimer.fetchRequest()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do{
+            let intervalTimers = try context.fetch(fetchRequest)
+            self.fetchedTimers = intervalTimers
+            for (index,defaultTimer) in self.fetchedTimers.enumerated() {
+                if(index != self.fetchedTimers.count){
+                defaultTimer.isDefault = false
+                //appDelegate.saveContext()
+                }
+            }
+        } catch{
+            print(error)
+        }
     }
     
     
