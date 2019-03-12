@@ -17,6 +17,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var restTime: UIPickerView!
     @IBOutlet weak var menuStackView: UIStackView!
     @IBOutlet weak var createBtn: UIButton!
+    @IBOutlet weak var quickStartSwitch: UISwitch!
     
     
     var activeClock = Timers(name:"Timer1",hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
@@ -35,8 +36,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         restTime.dataSource = self
         createBtn.isEnabled = false
     }
-    @IBAction func setasQuickstart(_ sender: Any) {
-        print("Switch was hit!")
+    @IBAction func setasQuickstart(_ sender: UISwitch) {
+        print("Switch was hit! and it is  \(sender.isOn)")
         //Code in here will set this timer to be the quickstart default. This value will be a boolean in database. There will on be one quick timer at anypoint that will be a default timer to true
     }
     
@@ -153,6 +154,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         intervalT.name = activeClock.name
         intervalT.restTime = Int32(activeClock.restTime)
         intervalT.sets = Int16(activeClock.sets)
+        intervalT.isDefault = quickStartSwitch.isOn
+        print("Default values is: \(quickStartSwitch.isOn)")
         appDelegate?.saveContext()
     }
     

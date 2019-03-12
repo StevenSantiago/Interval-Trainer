@@ -528,6 +528,7 @@
                         <outlet property="createBtn" destination="XYC-rB-OiQ" id="r2l-CW-mR4"/>
                         <outlet property="menuStackView" destination="MV3-Td-7ft" id="woH-HM-A6V"/>
                         <outlet property="numberOfSets" destination="tbj-Wc-eQl" id="hcm-61-nGY"/>
+                        <outlet property="quickStartSwitch" destination="VaN-CW-ofU" id="J9z-VA-ou2"/>
                         <outlet property="restTime" destination="x1I-Fo-ikc" id="Fde-OT-vHq"/>
                         <outlet property="timerName" destination="JLW-mh-VQQ" id="ETN-2H-rLc"/>
                         <segue destination="PbS-7n-qps" kind="show" identifier="FromIntervalVC" id="LD6-rt-3Nh"/>
