@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 
 class IntervalTimerVC: UIViewController {
@@ -22,7 +23,6 @@ class IntervalTimerVC: UIViewController {
     
     
     var HMS:(Int,Int,Int) = (0,0,0)
-    
     var customLabel = DisplayTimer()
     var timer = Timer()
     var active = true
@@ -128,6 +128,8 @@ class IntervalTimerVC: UIViewController {
     func setTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(IntervalTimerVC.updateTimer), userInfo: nil, repeats: true)
     }
+    
+
     
     
 }

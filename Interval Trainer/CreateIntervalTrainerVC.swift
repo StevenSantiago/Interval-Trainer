@@ -156,9 +156,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         intervalT.restTime = Int32(activeClock.restTime)
         intervalT.sets = Int16(activeClock.sets)
         intervalT.isDefault = quickStartSwitch.isOn
-        print("Default values is: \(quickStartSwitch.isOn)")
         appDelegate?.saveContext()
-        //oneDefaultTimer()
+        oneDefaultTimer()
     }
     
     //Will change any timer that has isDefault value to true except the one that was just created
@@ -169,13 +168,11 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         let context = appDelegate.persistentContainer.viewContext
         
         do{
-            let intervalTimers = try context.fetch(fetchRequest)
-            self.fetchedTimers = intervalTimers
-            for (index,defaultTimer) in self.fetchedTimers.enumerated() {
-                if(index != self.fetchedTimers.count){
-                defaultTimer.isDefault = false
-                //appDelegate.saveContext()
-                }
+            let fetchResults = try context.fetch(fetchRequest) as [NSManagedObject]
+            for index in 0...fetchResults.count-2 {
+                let managedObject = fetchResults[index]
+                managedObject.setValue(false, forKey: "isDefault")
+                appDelegate.saveContext()
             }
         } catch{
             print(error)
