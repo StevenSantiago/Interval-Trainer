@@ -25,6 +25,12 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     var restClock = Timers(name:"Timer2",hour: 0, minute: 0, second: 0, restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0) // really only need to store h,m,s
     
     var fetchedTimers:[IntervalTimer] = []
+    var activeHours = 0
+    var activeMinutes = 0
+    var activeSeconds = 0
+    var restHours = 0
+    var restMinutes = 0
+    var restSeconds = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,37 +99,36 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         switch component {
         case 0:
             if pickerView.tag == 1{
-                activeClock.hour = row
-                activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
+                activeHours = row
+                activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: activeSeconds)
                 activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
-                restClock.hour = row
-                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                restHours = row
+                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
                 validUserInput()
-                
             }
         case 1:
             if pickerView.tag == 1{
-                activeClock.minute = row
-                activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
-                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                activeMinutes = row
+                activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: restSeconds)
+                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
                 activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
-                restClock.minute = row
-                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                restMinutes = row
+                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
                 validUserInput()
             }
         case 2:
             if pickerView.tag == 1{
-                activeClock.second = row
-                activeClock.activeTime = addTime(hours: activeClock.hour, minutes: activeClock.minute, seconds: activeClock.second)
+                restSeconds = row
+                activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: restSeconds)
                 activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
-                restClock.second = row
-                activeClock.restTime = addTime(hours: restClock.hour, minutes: restClock.minute, seconds: restClock.second)
+                restSeconds = row
+                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
                 validUserInput()
             }
         default:
