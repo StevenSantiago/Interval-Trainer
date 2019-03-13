@@ -82,8 +82,9 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "TimerStart") as! IntervalTimerVC
         secondViewController.intervalTimer.name = item.name!
         secondViewController.intervalTimer.sets = Int(item.sets)
-        secondViewController.intervalTimer.currentRunTime = Int(item.activeTime)
+        secondViewController.intervalTimer.activeTime = Int(item.activeTime)
         secondViewController.intervalTimer.restTime = Int(item.restTime)
+        secondViewController.currentRunTime = Int(item.activeTime)
         
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }

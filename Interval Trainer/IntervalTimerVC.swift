@@ -23,6 +23,7 @@ class IntervalTimerVC: UIViewController {
     
     
     var HMS:(Int,Int,Int) = (0,0,0)
+    var currentRunTime = 45;
     var customLabel = DisplayTimer()
     var timer = Timer()
     var active = true
@@ -34,6 +35,7 @@ class IntervalTimerVC: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
         customLabel = timerLbl as! DisplayTimer
+        //currentRunTime = intervalTimer.activeTime
         updateTimerLbl()
         timerLbl.adjustsFontSizeToFitWidth = false
         
@@ -58,31 +60,36 @@ class IntervalTimerVC: UIViewController {
   
     @objc func updateTimer(){
         if(active){
-        intervalTimer.subtractRunTime()
-        if(intervalTimer.currentRunTime != 0){
+        //intervalTimer.subtractRunTime()
+            currentRunTime = currentRunTime - 1
+        if(currentRunTime != 0){
             updateTimerLbl()
         }
-        if intervalTimer.currentRunTime == 0 && intervalTimer.sets > 0{
+        if currentRunTime == 0 && intervalTimer.sets > 0{
                     intervalTimer.subtractSet()
                     numberOfSets.text = String(intervalTimer.sets)
                     audioPlayer2.play()
                     active = false
-                    intervalTimer.resetRestTime()
+                    currentRunTime = intervalTimer.restTime
+                    //intervalTimer.resetRestTime()
                     TimerBackView.backgroundColor = #colorLiteral(red: 1, green: 0.2555991, blue: 0.4611244713, alpha: 1)
                     updateTimerLbl()
-                    intervalTimer.subtractRunTime()
+                    currentRunTime = currentRunTime - 1
+                    //intervalTimer.subtractRunTime()
         }
-        else if intervalTimer.currentRunTime > 0 && intervalTimer.sets >= 1{
+        else if currentRunTime > 0 && intervalTimer.sets >= 1{
                     countDownAlert()
         }
     }
         else {
-                if(intervalTimer.currentRunTime == 0) {
+                if(currentRunTime == 0) {
                     active = true
-                    intervalTimer.resetActiveTime()
+                    currentRunTime = intervalTimer.activeTime
+                    //intervalTimer.resetActiveTime()
                     audioPlayer2.play()
                     if(intervalTimer.sets == 0){
-                        intervalTimer.endOfSession()
+                        currentRunTime = 0
+                        //intervalTimer.endOfSession()
                         timer.invalidate()
                         timerLbl.text = "Complete!"
                         customLabel.updateLabel()
@@ -92,22 +99,23 @@ class IntervalTimerVC: UIViewController {
                     }
                     TimerBackView.backgroundColor = #colorLiteral(red: 0.423529923, green: 0.6870478392, blue: 0.8348321319, alpha: 1)
                 }
-                else if intervalTimer.currentRunTime > 0 {
+                else if currentRunTime > 0 {
                     countDownAlert()
                     updateTimerLbl()
-                    intervalTimer.subtractRunTime()
+                    currentRunTime = currentRunTime - 1
+                    //intervalTimer.subtractRunTime()
                 }
         }
     }
     
     func countDownAlert(){
-        if (intervalTimer.currentRunTime == 3 || intervalTimer.currentRunTime == 2 || intervalTimer.currentRunTime == 1){
+        if (currentRunTime == 3 || currentRunTime == 2 || currentRunTime == 1){
             audioPlayer.play()
         }
     }
     
     func updateTimerLbl(){
-        HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: intervalTimer.currentRunTime)
+        HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: currentRunTime)
         timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
     }
     
