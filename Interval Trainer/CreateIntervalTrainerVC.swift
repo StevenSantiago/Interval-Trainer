@@ -21,8 +21,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var quickStartSwitch: UISwitch!
     
     
-    var activeClock = Timers(name:"Timer1", restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0)
-    var restClock = Timers(name:"Timer2", restTime: 0, activeTime: 0, currentRunTime: 0, sets: 0) // really only need to store h,m,s
+    var activeClock = Timers(name:"Timer1", restTime: 0, activeTime: 0, sets: 0)
+    var restClock = Timers(name:"Timer2", restTime: 0, activeTime: 0, sets: 0)
     
     var fetchedTimers:[IntervalTimer] = []
     var activeHours = 0
@@ -101,7 +101,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             if pickerView.tag == 1{
                 activeHours = row
                 activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: activeSeconds)
-                activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
                 restHours = row
@@ -113,7 +112,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
                 activeMinutes = row
                 activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: restSeconds)
                 activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
-                activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
                 restMinutes = row
@@ -124,7 +122,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             if pickerView.tag == 1{
                 restSeconds = row
                 activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: restSeconds)
-                activeClock.currentRunTime = activeClock.activeTime
                 validUserInput()
             } else {
                 restSeconds = row
