@@ -19,7 +19,7 @@ class IntervalTimerVC: UIViewController {
     @IBOutlet weak var StopBtn: UIButton!
     @IBOutlet weak var numberOfSets: UILabel!
     
-    var intervalTimer = Timers(name:"Empty", hour: 0, minute: 0, second: 45, restTime: 12, activeTime: 45, currentRunTime: 45, sets: 10)
+    var intervalTimer = Timers(name:"Empty", restTime: 12, activeTime: 45, currentRunTime: 45, sets: 10)
     
     
     var HMS:(Int,Int,Int) = (0,0,0)
