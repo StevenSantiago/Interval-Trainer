@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import CoreData
 
+//TODO: NEED TO Invalidate timer when backing out of controller after timer has started.
 
 class IntervalTimerVC: UIViewController {
 
@@ -34,6 +35,7 @@ class IntervalTimerVC: UIViewController {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
+        setDefaultTimer()
         customLabel = timerLbl as! DisplayTimer
         //currentRunTime = intervalTimer.activeTime
         updateTimerLbl()
@@ -137,7 +139,29 @@ class IntervalTimerVC: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(IntervalTimerVC.updateTimer), userInfo: nil, repeats: true)
     }
     
-
+    func setDefaultTimer(){
+        let fetchRequest: NSFetchRequest<IntervalTimer> = IntervalTimer.fetchRequest()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do{
+            let fetchResults = try context.fetch(fetchRequest) as [NSManagedObject]
+            for index in 0...fetchResults.count-1 {
+                let managedObject = fetchResults[index]
+                let defaultTimer = managedObject.value(forKey: "isDefault") as! Bool
+                if(defaultTimer == true){
+                    intervalTimer.activeTime = managedObject.value(forKey: "activeTime") as! Int
+                    currentRunTime = intervalTimer.activeTime
+                    intervalTimer.restTime = managedObject.value(forKey: "restTime") as! Int
+                    intervalTimer.sets = managedObject.value(forKey: "sets") as! Int
+                    intervalTimer.name = managedObject.value(forKey: "name") as! String
+                }
+            }
+        } catch{
+            print(error)
+        }
+    }
     
     
 }
