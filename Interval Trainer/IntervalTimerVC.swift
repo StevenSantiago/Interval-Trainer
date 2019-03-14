@@ -24,6 +24,7 @@ class IntervalTimerVC: UIViewController {
     
     
     var HMS:(Int,Int,Int) = (0,0,0)
+    var defaultTimer = false;
     var currentRunTime = 45;
     var customLabel = DisplayTimer()
     var timer = Timer()
@@ -35,9 +36,12 @@ class IntervalTimerVC: UIViewController {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
-        setDefaultTimer()
+        if(defaultTimer == true){
+            setDefaultTimer()
+        } else{
+            currentRunTime = intervalTimer.activeTime
+        }
         customLabel = timerLbl as! DisplayTimer
-        //currentRunTime = intervalTimer.activeTime
         updateTimerLbl()
         timerLbl.adjustsFontSizeToFitWidth = false
         
@@ -147,6 +151,7 @@ class IntervalTimerVC: UIViewController {
         
         do{
             let fetchResults = try context.fetch(fetchRequest) as [NSManagedObject]
+            if(fetchResults.count != 0){
             for index in 0...fetchResults.count-1 {
                 let managedObject = fetchResults[index]
                 let defaultTimer = managedObject.value(forKey: "isDefault") as! Bool
@@ -157,6 +162,7 @@ class IntervalTimerVC: UIViewController {
                     intervalTimer.sets = managedObject.value(forKey: "sets") as! Int
                     intervalTimer.name = managedObject.value(forKey: "name") as! String
                 }
+            }
             }
         } catch{
             print(error)

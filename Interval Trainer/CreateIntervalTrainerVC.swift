@@ -162,7 +162,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         oneDefaultTimer()
     }
     
-    //Will change any timer that has isDefault value to true except the one that was just created
     func oneDefaultTimer(){
         let fetchRequest: NSFetchRequest<IntervalTimer> = IntervalTimer.fetchRequest()
         
@@ -171,10 +170,12 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         
         do{
             let fetchResults = try context.fetch(fetchRequest) as [NSManagedObject]
+            if(fetchResults.count >= 2){
             for index in 0...fetchResults.count-2 {
                 let managedObject = fetchResults[index]
                 managedObject.setValue(false, forKey: "isDefault")
                 appDelegate.saveContext()
+            }
             }
         } catch{
             print(error)
