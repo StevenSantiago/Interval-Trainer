@@ -24,6 +24,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     var activeClock = Timers(name:"Timer1", restTime: 0, activeTime: 0, sets: 0)
     var restClock = Timers(name:"Timer2", restTime: 0, activeTime: 0, sets: 0)
     
+    var tName = ""
+    var tSets = 0
+    var editingTimer = false
     var fetchedTimers:[IntervalTimer] = []
     var activeHours = 0
     var activeMinutes = 0
@@ -44,6 +47,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         restTime.delegate = self
         restTime.dataSource = self
         createBtn.isEnabled = false
+        editExistingTimer()
     }
     @IBAction func setasQuickstart(_ sender: UISwitch) {
         print("Switch was hit! and it is  \(sender.isOn)")
@@ -179,6 +183,18 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             }
         } catch{
             print(error)
+        }
+    }
+    
+    func editExistingTimer() {
+//        @IBOutlet weak var timerName: UITextField!
+//        @IBOutlet weak var numberOfSets: UITextField!
+//        @IBOutlet weak var activeTime: UIPickerView!
+//        @IBOutlet weak var restTime: UIPickerView!
+        if(editingTimer){
+        timerName.text = tName
+        numberOfSets.text = String(tSets)
+        
         }
     }
     
