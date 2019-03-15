@@ -64,6 +64,9 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         
         let editAction = UITableViewRowAction(style: .normal, title: "EDIT") { (rowAction, indexPath) in
             print("Editing timer")
+            let item = self.intervalTimers[indexPath.row]
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateIntervalTrainerVC") as! CreateIntervalTrainerVC
+            self.navigationController?.pushViewController(secondViewController, animated: true)
         }
         deleteAction.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         editAction.backgroundColor = #colorLiteral(red: 0, green: 1, blue: 0.3671256304, alpha: 1)
@@ -93,7 +96,6 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
-    
     
     func fetchCoreData(){
         let fetchRequest: NSFetchRequest<IntervalTimer> = IntervalTimer.fetchRequest()
