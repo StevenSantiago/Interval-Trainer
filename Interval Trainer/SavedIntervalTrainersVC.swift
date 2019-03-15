@@ -61,8 +61,13 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
             self.fetchCoreData()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "EDIT") { (rowAction, indexPath) in
+            print("Editing timer")
+        }
         deleteAction.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        return [deleteAction]
+        editAction.backgroundColor = #colorLiteral(red: 0, green: 1, blue: 0.3671256304, alpha: 1)
+        return [deleteAction,editAction]
     }
     
     
