@@ -27,6 +27,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     var tName = ""
     var tSets = 0
     var editingTimer = false
+    var defaultTimer = false
     var fetchedTimers:[IntervalTimer] = []
     var activeHours = 0
     var activeMinutes = 0
@@ -194,7 +195,15 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         if(editingTimer){
         timerName.text = tName
         numberOfSets.text = String(tSets)
-        
+        quickStartSwitch.isOn = defaultTimer
+        let HMS1 = activeClock.convertToHoursMinsSeconds(Seconds: activeClock.activeTime)
+        let HMS2 = activeClock.convertToHoursMinsSeconds(Seconds: activeClock.restTime)
+        activeTime.selectRow(HMS1.0, inComponent: 0, animated: true)
+        activeTime.selectRow(HMS1.1, inComponent: 1, animated: true)
+        activeTime.selectRow(HMS1.2, inComponent: 2, animated: true)
+        restTime.selectRow(HMS2.0, inComponent: 0, animated: true)
+        restTime.selectRow(HMS2.1, inComponent: 1, animated: true)
+        restTime.selectRow(HMS2.2, inComponent: 2, animated: true)
         }
     }
     

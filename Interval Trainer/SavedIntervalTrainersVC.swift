@@ -68,11 +68,10 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
             let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateIntervalTrainerVC") as! CreateIntervalTrainerVC
             secondViewController.tName = item.name!
             secondViewController.tSets = Int(item.sets)
+            secondViewController.activeClock.activeTime = Int(item.activeTime)
+            secondViewController.activeClock.restTime = Int(item.restTime)
+            secondViewController.defaultTimer = item.isDefault
             secondViewController.editingTimer = true
-//            @IBOutlet weak var timerName: UITextField!
-//            @IBOutlet weak var numberOfSets: UITextField!
-//            @IBOutlet weak var activeTime: UIPickerView!
-//            @IBOutlet weak var restTime: UIPickerView!
             self.navigationController?.pushViewController(secondViewController, animated: true)
         }
         deleteAction.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
