@@ -22,7 +22,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     
     var activeClock = Timers(name:"Timer1", restTime: 0, activeTime: 0, sets: 0)
-    var restClock = Timers(name:"Timer2", restTime: 0, activeTime: 0, sets: 0)
     
     var tName = ""
     var tSets = 0
