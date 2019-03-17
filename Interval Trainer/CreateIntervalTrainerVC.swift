@@ -187,10 +187,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     }
     
     func editExistingTimer() {
-//        @IBOutlet weak var timerName: UITextField!
-//        @IBOutlet weak var numberOfSets: UITextField!
-//        @IBOutlet weak var activeTime: UIPickerView!
-//        @IBOutlet weak var restTime: UIPickerView!
         if(editingTimer){
         timerName.text = tName
         numberOfSets.text = String(tSets)
@@ -203,6 +199,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         restTime.selectRow(HMS2.0, inComponent: 0, animated: true)
         restTime.selectRow(HMS2.1, inComponent: 1, animated: true)
         restTime.selectRow(HMS2.2, inComponent: 2, animated: true)
+        createBtn.setTitle("Save", for: .normal)
+        validUserInput()
         }
     }
     
