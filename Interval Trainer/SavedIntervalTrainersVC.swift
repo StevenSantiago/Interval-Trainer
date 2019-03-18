@@ -72,6 +72,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
             secondViewController.activeClock.restTime = Int(item.restTime)
             secondViewController.defaultTimer = item.isDefault
             secondViewController.editingTimer = true
+            secondViewController.iTimer = item
             self.navigationController?.pushViewController(secondViewController, animated: true)
         }
         deleteAction.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)

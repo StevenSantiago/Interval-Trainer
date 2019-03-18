@@ -28,6 +28,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     var editingTimer = false
     var defaultTimer = false
     var fetchedTimers:[IntervalTimer] = []
+    var iTimer: IntervalTimer?
     var activeHours = 0
     var activeMinutes = 0
     var activeSeconds = 0
@@ -155,6 +156,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     }
     
     func save(){
+        var iT : IntervalTimer!
+        
+        if(!editingTimer){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else{return}
         let intervalT = IntervalTimer(context: managedContext)
         intervalT.activeTime = Int32(activeClock.activeTime)
@@ -164,6 +168,16 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         intervalT.isDefault = quickStartSwitch.isOn
         appDelegate?.saveContext()
         oneDefaultTimer()
+        } else {
+            iT = iTimer
+            iT.activeTime = Int32(activeClock.activeTime)
+            iT.name = activeClock.name
+            iT.restTime = Int32(activeClock.restTime)
+            iT.sets = Int16(activeClock.sets)
+            iT.isDefault = quickStartSwitch.isOn
+            appDelegate?.saveContext()
+            oneDefaultTimer()
+        }
     }
     
     func oneDefaultTimer(){
@@ -178,6 +192,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             for index in 0...fetchResults.count-2 {
                 let managedObject = fetchResults[index]
                 managedObject.setValue(false, forKey: "isDefault")
+                print("Id for this object is:  \(managedObject.objectID.uriRepresentation().lastPathComponent)")
                 appDelegate.saveContext()
             }
             }
