@@ -39,6 +39,27 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController!.navigationBar.isHidden = false
+        savedTimers.dataSource = self
+        savedTimers.delegate = self
+        
+        
+        let fetchRequest: NSFetchRequest<IntervalTimer> = IntervalTimer.fetchRequest()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do{
+            let intervalTimers = try context.fetch(fetchRequest)
+            self.intervalTimers = intervalTimers
+            self.savedTimers.reloadData()
+        } catch{
+            print(error)
+        }
+    }
+    
     
     func removeIntervalTimer(indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else{return}
