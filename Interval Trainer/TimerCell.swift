@@ -14,10 +14,12 @@ class TimerCell: UITableViewCell {
     @IBOutlet weak var sets: UILabel!
     @IBOutlet weak var activeTime: UILabel!
     @IBOutlet weak var restTime: UILabel!
+    @IBOutlet weak var defaultIndicator: UILabel!
     
     
     func setTimerCell(timer: IntervalTimer){
         InteralTimerName.text = timer.name
+        defaultIndicator.text = timer.isDefault ? "Default": ""
         self.sets.text = "Sets: " + String(timer.sets)
         self.activeTime.text = "Active: " + String(timer.activeTime) + " s"
         self.restTime.text = "Rest: " + String(timer.restTime) + " s"
