@@ -67,6 +67,16 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         appDelegate?.saveContext()
         print("Deleted Timer!")
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let timer = intervalTimers[indexPath.row]
+        if timer.isDefault {
+            return 75
+        } else{
+            return 50
+        }
+        
+    }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true // allow editing of table view
