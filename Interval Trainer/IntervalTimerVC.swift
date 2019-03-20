@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import CoreData
 
-//TODO: NEED TO Invalidate timer when backing out of controller after timer has started.
 
 class IntervalTimerVC: UIViewController {
 
@@ -32,6 +31,11 @@ class IntervalTimerVC: UIViewController {
     var audioPlayer = AVAudioPlayer()
     var audioPlayer2 = AVAudioPlayer()
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        timer.invalidate()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
