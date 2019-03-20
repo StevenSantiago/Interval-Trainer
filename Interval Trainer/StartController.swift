@@ -36,9 +36,6 @@ class StartController: UIViewController {
     @IBAction func SavedIntervalTimers(_ sender: Any) {
         performSegue(withIdentifier: TO_SAVED_INTERVAL_TRAINER, sender: nil)
     }
-    @IBAction func History(_ sender: Any) {
-        performSegue(withIdentifier: TO_HISTORY, sender: nil)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? IntervalTimerVC {

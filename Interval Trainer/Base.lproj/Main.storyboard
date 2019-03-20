@@ -64,16 +64,6 @@
                                     <constraint firstItem="JJ1-LX-kCj" firstAttribute="centerX" secondItem="iho-Xf-I8I" secondAttribute="centerX" id="INO-Yv-Pl1"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O3-bl-Es3">
-                                <rect key="frame" x="151.5" y="637" width="72" height="20"/>
-                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="8"/>
-                                <state key="normal" title="History">
-                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <connections>
-                                    <action selector="History:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nSN-Qc-tGn"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval Trainer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsU-qu-4ac">
                                 <rect key="frame" x="41.5" y="79" width="292.5" height="14"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="15"/>
@@ -82,10 +72,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2O3-bl-Es3" secondAttribute="bottom" constant="10" id="Aoe-6O-y40"/>
                             <constraint firstItem="fsU-qu-4ac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JSU-LI-ORC"/>
                             <constraint firstItem="fsU-qu-4ac" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="MWc-fA-D2H"/>
-                            <constraint firstItem="2O3-bl-Es3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QSx-Oe-VRT"/>
                             <constraint firstItem="iho-Xf-I8I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yve-oy-mbe"/>
                             <constraint firstItem="iho-Xf-I8I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eAn-Ae-2Fm"/>
                         </constraints>
@@ -94,7 +82,6 @@
                     <connections>
                         <segue destination="PbS-7n-qps" kind="show" identifier="IntervalTimerVC" id="gvO-qJ-yow"/>
                         <segue destination="KOX-cM-ASF" kind="show" identifier="CreateIntervalTrainerVC" id="qu0-Qn-faV"/>
-                        <segue destination="zwj-na-m4w" kind="show" identifier="HistoryVC" id="WRi-nB-moz"/>
                         <segue destination="uYr-82-ATm" kind="show" identifier="SavedIntervalTrainersVC" id="NP8-yc-3HQ"/>
                     </connections>
                 </viewController>
@@ -124,7 +111,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppV-QA-TYF">
-                                <rect key="frame" x="166" y="25" width="43" height="16"/>
+                                <rect key="frame" x="166" y="69" width="43" height="16"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -295,60 +282,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0P0-JL-Hcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2509.5999999999999" y="1192.3538230884558"/>
-        </scene>
-        <!--HistoryVC-->
-        <scene sceneID="d2v-hT-rCE">
-            <objects>
-                <viewController storyboardIdentifier="HistoryVC" id="zwj-na-m4w" customClass="HistoryVC" customModule="Interval_Trainer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Mtc-4Z-KQz"/>
-                        <viewControllerLayoutGuide type="bottom" id="JY8-Gy-KTT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a5g-UJ-kMN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3333333" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0N-gZ-Tmr" customClass="DisplayTimer" customModule="Interval_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="258" width="375" height="42"/>
-                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2222222" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cab-BH-BcR" customClass="DisplayTimer" customModule="Interval_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="347" width="375" height="41.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1111111" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Dz-M5o" customClass="DisplayTimer" customModule="Interval_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="422" width="375" height="41.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="7777777" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="08c-og-vGC" customClass="DisplayTimer" customModule="Interval_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="160" width="375" height="42"/>
-                                <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="PUm-Dz-M5o" firstAttribute="leading" secondItem="a5g-UJ-kMN" secondAttribute="leading" id="42a-di-GbN"/>
-                            <constraint firstItem="v0N-gZ-Tmr" firstAttribute="leading" secondItem="a5g-UJ-kMN" secondAttribute="leading" id="7Dc-5M-43J"/>
-                            <constraint firstAttribute="trailing" secondItem="08c-og-vGC" secondAttribute="trailing" id="Kn7-uG-IpE"/>
-                            <constraint firstItem="Cab-BH-BcR" firstAttribute="leading" secondItem="a5g-UJ-kMN" secondAttribute="leading" id="SYM-M0-cgB"/>
-                            <constraint firstItem="08c-og-vGC" firstAttribute="leading" secondItem="a5g-UJ-kMN" secondAttribute="leading" id="cV3-Fl-7Cn"/>
-                            <constraint firstAttribute="trailing" secondItem="PUm-Dz-M5o" secondAttribute="trailing" id="hGl-Ko-8eb"/>
-                            <constraint firstAttribute="trailing" secondItem="Cab-BH-BcR" secondAttribute="trailing" id="v8D-qj-POP"/>
-                            <constraint firstAttribute="trailing" secondItem="v0N-gZ-Tmr" secondAttribute="trailing" id="xm8-8l-rgn"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LAB-PC-bdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2534.7826086956525" y="-1319.021739130435"/>
         </scene>
         <!--Create Interval TrainerVC-->
         <scene sceneID="OKP-3B-HMK">
@@ -565,6 +498,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LD6-rt-3Nh"/>
+        <segue reference="gvO-qJ-yow"/>
     </inferredMetricsTieBreakers>
 </document>

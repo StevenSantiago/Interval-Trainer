@@ -19,15 +19,18 @@ class IntervalTimerVC: UIViewController {
     @IBOutlet weak var StopBtn: UIButton!
     @IBOutlet weak var numberOfSets: UILabel!
     
+    //Default Timer used if no default timer is provided for quickstart
     var intervalTimer = Timers(name:"Empty", restTime: 12, activeTime: 45, sets: 10)
     
     
     var HMS:(Int,Int,Int) = (0,0,0)
+    var active = true
     var defaultTimer = false;
     var currentRunTime = 45;
     var customLabel = DisplayTimer()
     var timer = Timer()
-    var active = true
+    
+    //Two audio players to play different tones
     var audioPlayer = AVAudioPlayer()
     var audioPlayer2 = AVAudioPlayer()
     

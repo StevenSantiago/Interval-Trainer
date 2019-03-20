@@ -25,7 +25,6 @@
 		07E686501E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */; };
 		07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */; };
 		07FA145C218557DB0012D190 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA145B218557DB0012D190 /* Constants.swift */; };
-		07FA145E21855B4B0012D190 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA145D21855B4B0012D190 /* HistoryVC.swift */; };
 		07FA146121858CDE0012D190 /* GestureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA146021858CDE0012D190 /* GestureExtension.swift */; };
 		07FAFDD0222A4AB500A732BE /* Laserian.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FAFDCF222A4AB500A732BE /* Laserian.ttf */; };
 /* End PBXBuildFile section */
@@ -52,7 +51,6 @@
 		07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIntervalTrainerVC.swift; sourceTree = "<group>"; };
 		07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIntervalTrainersVC.swift; sourceTree = "<group>"; };
 		07FA145B218557DB0012D190 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		07FA145D21855B4B0012D190 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		07FA146021858CDE0012D190 /* GestureExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureExtension.swift; sourceTree = "<group>"; };
 		07FAFDCF222A4AB500A732BE /* Laserian.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Laserian.ttf; path = ../../../../Downloads/laserian/Laserian.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +155,6 @@
 				07E6864D1E6ADC1700B09760 /* IntervalTimerVC.swift */,
 				07E6864F1E6ADC3A00B09760 /* CreateIntervalTrainerVC.swift */,
 				07E686511E6ADC6300B09760 /* SavedIntervalTrainersVC.swift */,
-				07FA145D21855B4B0012D190 /* HistoryVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -265,7 +262,6 @@
 				07E686521E6ADC6300B09760 /* SavedIntervalTrainersVC.swift in Sources */,
 				07FA145C218557DB0012D190 /* Constants.swift in Sources */,
 				07CA7262222E39EB00D5B834 /* IntervalTimer+CoreDataProperties.swift in Sources */,
-				07FA145E21855B4B0012D190 /* HistoryVC.swift in Sources */,
 				07E686351E6A5E8F00B09760 /* StartController.swift in Sources */,
 				071FFD4A221F942500C087D6 /* DisplayTimer.swift in Sources */,
 				07FA146121858CDE0012D190 /* GestureExtension.swift in Sources */,
