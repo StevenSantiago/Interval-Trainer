@@ -50,10 +50,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         createBtn.isEnabled = false
         editExistingTimer()
     }
-    @IBAction func setasQuickstart(_ sender: UISwitch) {
-        print("Switch was hit! and it is  \(sender.isOn)")
-        //Code in here will set this timer to be the quickstart default. This value will be a boolean in database. There will on be one quick timer at anypoint that will be a default timer to true
-    }
     
     @IBAction func startTimer(_ sender: Any) {
         performSegue(withIdentifier: TO_START_TIMER, sender: nil)

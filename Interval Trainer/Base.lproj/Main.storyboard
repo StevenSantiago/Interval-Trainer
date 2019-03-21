@@ -111,7 +111,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppV-QA-TYF">
-                                <rect key="frame" x="166" y="69" width="43" height="16"/>
+                                <rect key="frame" x="166" y="25" width="43" height="16"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -443,9 +443,6 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VaN-CW-ofU">
                                         <rect key="frame" x="80" y="415" width="51" height="31"/>
                                         <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="setasQuickstart:" destination="KOX-cM-ASF" eventType="valueChanged" id="rIW-pd-kNW"/>
-                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -498,6 +495,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gvO-qJ-yow"/>
+        <segue reference="LD6-rt-3Nh"/>
     </inferredMetricsTieBreakers>
 </document>
