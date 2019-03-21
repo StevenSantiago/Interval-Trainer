@@ -101,41 +101,37 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         case 0:
             if pickerView.tag == 1{
                 activeHours = row
-                activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: activeSeconds)
+                activeClock.activeTime = Timers.convertToSeconds(h: activeHours, m: activeMinutes, s: activeSeconds)
                 validUserInput()
             } else {
                 restHours = row
-                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
+                activeClock.restTime = Timers.convertToSeconds(h: restHours, m: restMinutes, s: restSeconds)
                 validUserInput()
             }
         case 1:
             if pickerView.tag == 1{
                 activeMinutes = row
-                activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: restSeconds)
-                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
+                activeClock.activeTime = Timers.convertToSeconds(h: activeHours, m: activeMinutes, s: restSeconds)
+                activeClock.restTime = Timers.convertToSeconds(h: restHours, m: restMinutes, s: restSeconds)
                 validUserInput()
             } else {
                 restMinutes = row
-                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
+                activeClock.restTime = Timers.convertToSeconds(h: restHours, m: restMinutes, s: restSeconds)
                 validUserInput()
             }
         case 2:
             if pickerView.tag == 1{
                 restSeconds = row
-                activeClock.activeTime = addTime(hours: activeHours, minutes: activeMinutes, seconds: restSeconds)
+                activeClock.activeTime = Timers.convertToSeconds(h: activeHours, m: activeMinutes, s: restSeconds)
                 validUserInput()
             } else {
                 restSeconds = row
-                activeClock.restTime = addTime(hours: restHours, minutes: restMinutes, seconds: restSeconds)
+                activeClock.restTime = Timers.convertToSeconds(h: restHours, m: restMinutes, s: restSeconds)
                 validUserInput()
             }
         default:
             break;
         }
-    }
-    
-    func addTime(hours:Int,minutes:Int,seconds:Int) -> Int {
-    return Int((hours*60*60) + (minutes*60) + (seconds))
     }
     
     @IBAction func checkInput(_ sender: UITextField) {
