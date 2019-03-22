@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate {
     
     @IBOutlet weak var timerName: UITextField!
     @IBOutlet weak var numberOfSets: UITextField!
@@ -19,6 +19,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var menuStackView: UIStackView!
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var quickStartSwitch: UISwitch!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     var activeClock = Timers(name:"Timer1", restTime: 0, activeTime: 0, sets: 0)
@@ -39,11 +40,13 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.isHidden = false
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
         //Call from extension that closes keyboard
         self.hideKeyboardWhenTappedAround()
         activeTime.tag = 1
         activeTime.delegate = self
         activeTime.dataSource = self
+        scrollView.delegate = self
         restTime.tag = 2
         restTime.delegate = self
         restTime.dataSource = self
