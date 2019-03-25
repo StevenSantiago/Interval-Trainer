@@ -40,9 +40,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.navigationBar.isHidden = false
-        scrollView.frame = self.view.bounds
-        print("Size of scrollView ar load: \(scrollView.frame.height)")
-        scrollView.contentSize = CGSize(width: self.scrollView.frame.width, height: self.scrollView.frame.height + 100)
         //Call from extension that closes keyboard
         self.hideKeyboardWhenTappedAround()
         activeTime.tag = 1
