@@ -18,7 +18,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController!.navigationBar.isHidden = false
+        //navigationController!.navigationBar.isHidden = false
         savedTimers.dataSource = self
         savedTimers.delegate = self
         
@@ -41,10 +41,9 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController!.navigationBar.isHidden = false
+        //navigationController!.navigationBar.isHidden = false
         savedTimers.dataSource = self
         savedTimers.delegate = self
-        
         
         let fetchRequest: NSFetchRequest<IntervalTimer> = IntervalTimer.fetchRequest()
         
@@ -75,16 +74,18 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         } else{
             return 50
         }
-        
+
     }
+    
+    
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true // allow editing of table view
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return UITableViewCell.EditingStyle.delete//Currently does not do anything due to UITableViewRowAction
-    }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return UITableViewCell.EditingStyle.delete//Currently does not do anything due to UITableViewRowAction
+//    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
