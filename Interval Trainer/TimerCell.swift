@@ -26,15 +26,15 @@ class TimerCell: UITableViewCell {
         self.sets.text = "Sets: " + String(timer.sets)
         self.activeTime.text = "Active: " + String(timer.activeTime) + " s"
         self.restTime.text = "Rest: " + String(timer.restTime) + " s"
-        print("This is the size of the stack view: \(contentStackView.frame.size)")
-        print("This is size of left stack \(leftStack.frame.size)")
-        print("This is size of right stack \(rightStack.frame.size)")
-        //contentStackView.in
-        //contentStackView.backgroundColor = #colorLiteral(red: 0, green: 1, blue: 0.3671256304, alpha: 1)
+//        print("This is the size of the stack view: \(contentStackView.frame.size)")
+//        print("This is size of left stack \(leftStack.frame.size)")
+//        print("This is size of right stack \(rightStack.frame.size)")
+//        contentStackView.in
+//        contentStackView.backgroundColor = #colorLiteral(red: 0, green: 1, blue: 0.3671256304, alpha: 1)
     }
     
     func resizeStacks(){
-        leftStack.frame.size = CGSize(width: self.contentView.frame.width/2, height: 51.0)
+//        leftStack.frame.size = CGSize(width: self.contentView.frame.width/2, height: 51.0)
     }
 }
 

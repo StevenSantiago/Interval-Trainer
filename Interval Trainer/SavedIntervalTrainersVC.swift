@@ -59,6 +59,11 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true);
+        
+    }
+    
     
     func removeIntervalTimer(indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else{return}
@@ -83,9 +88,9 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         return true // allow editing of table view
     }
     
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return UITableViewCell.EditingStyle.delete//Currently does not do anything due to UITableViewRowAction
-//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete//Currently does not do anything due to UITableViewRowAction
+    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
@@ -93,7 +98,7 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
             self.fetchCoreData()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        
+
         let editAction = UITableViewRowAction(style: .normal, title: "EDIT") { (rowAction, indexPath) in
             print("Editing timer")
             let item = self.intervalTimers[indexPath.row]
