@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -200,43 +201,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="SGf-hB-5jb">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SGf-hB-5jb">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vWg-hA-dW0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="34.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vWg-hA-dW0">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="74.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGv-Oo-22O">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="11.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htz-aX-wUO">
-                                                                    <rect key="frame" x="0.0" y="11.5" width="187.5" height="11.5"/>
+                                                                    <rect key="frame" x="0.0" y="27.5" width="187.5" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5y0-Nh-rLu">
-                                                                    <rect key="frame" x="0.0" y="23" width="187.5" height="11.5"/>
+                                                                    <rect key="frame" x="0.0" y="55" width="187.5" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D2z-K1-VxW">
-                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="23"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D2z-K1-VxW">
+                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="74.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb7-TQ-Muf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="11.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsH-8l-6WR">
-                                                                    <rect key="frame" x="0.0" y="11.5" width="187.5" height="11.5"/>
+                                                                    <rect key="frame" x="0.0" y="41.5" width="187.5" height="33"/>
                                                                     <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
