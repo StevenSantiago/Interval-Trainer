@@ -47,7 +47,7 @@ struct Timers {
     }
     
     static func convertToSeconds(h:Int,m:Int,s:Int) -> Int{
-        return Int(s + m*60 + h*60*60)
+        return Int(s + m*60 + h*3600)
     }
     
 }
