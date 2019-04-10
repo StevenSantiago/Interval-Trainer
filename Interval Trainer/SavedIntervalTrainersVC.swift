@@ -69,7 +69,6 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         guard let managedContext = appDelegate?.persistentContainer.viewContext else{return}
         managedContext.delete(intervalTimers[indexPath.row])
         appDelegate?.saveContext()
-        print("Deleted Timer!")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
