@@ -97,10 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orc-AP-a5W" customClass="DisplayTimer" customModule="Interval_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="312.5" width="250" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="sJo-Ef-gPK"/>
-                                </constraints>
+                                <rect key="frame" x="-70" y="312.5" width="515" height="42"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
