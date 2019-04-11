@@ -27,14 +27,23 @@ struct Timers {
     
     func convertToHoursMinsSeconds(Seconds:Int) -> (Int,Int,Int) {
         var hours:Int = 0
-        var minutes = Int(Seconds/60)
+        var minutes:Int = 0
         var seconds:Int = 0
         
         if(Seconds >= 3600){
             //Hours
-            hours = 1
+            hours = Int(Seconds/3600)
+            if Seconds % 3600 != 0 {
+                if (Seconds - 3600) % 60 == 0 {
+                    minutes = Int((Seconds - 3600)/60)
+                } else {
+                    minutes = Int((Seconds - 3600)/60)
+                    seconds = (Seconds - 3600) % 60
+                }
+            }
+            
         }
-        if(Seconds >= 60){
+        else if(Seconds >= 60){
             //Minutes
             minutes = Int(Seconds/60)
             
