@@ -123,7 +123,7 @@ class IntervalTimerVC: UIViewController {
     
     func updateTimerLbl(){
         HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: currentRunTime)
-        timerLbl.text = String(HMS.1) + ":" + String(format: "%02d",HMS.2)
+        timerLbl.text = String(HMS.0) + ":" + String(HMS.1) + ":" + String(format: "%02d",HMS.2)
     }
     
     @IBAction func stopTimer(_ sender: UIButton) {
