@@ -154,7 +154,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         
         if(!editingTimer){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else{return}
-        oneDefaultTimer()
+        if quickStartSwitch.isOn {
+            oneDefaultTimer()
+        }
         let intervalT = IntervalTimer(context: managedContext)
         intervalT.activeTime = Int32(activeClock.activeTime)
         intervalT.name = activeClock.name
@@ -163,7 +165,9 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         intervalT.isDefault = quickStartSwitch.isOn
         appDelegate?.saveContext()
         } else {
-            oneDefaultTimer()
+            if quickStartSwitch.isOn {
+                oneDefaultTimer()
+            }
             iT = iTimer
             iT.activeTime = Int32(activeClock.activeTime)
             iT.name = activeClock.name

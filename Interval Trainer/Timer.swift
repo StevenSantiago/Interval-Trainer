@@ -33,12 +33,13 @@ struct Timers {
         if(Seconds >= 3600){
             //Hours
             hours = Int(Seconds/3600)
+            let adjustMinutes = hours * 60
             if Seconds % 3600 != 0 {
-                if (Seconds - 3600) % 60 == 0 {
-                    minutes = Int((Seconds - 3600)/60)
+                if Seconds  % 60 == 0 {
+                    minutes = Int(Seconds/60) - adjustMinutes
                 } else {
-                    minutes = Int((Seconds - 3600)/60)
-                    seconds = (Seconds - 3600) % 60
+                    minutes = Int(Seconds/60) - adjustMinutes
+                    seconds = Seconds % 60
                 }
             }
             
