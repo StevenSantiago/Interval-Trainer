@@ -28,6 +28,14 @@ class DisplayTimer: UILabel {
         self.adjustsFontSizeToFitWidth = true
     }
     
+    func formatDisplay(hour:Int,min:Int,sec:Int){
+        if hour > 0 {
+            self.text = String(hour) + ":" + String(format:"%02d",min) + ":" + String(format: "%02d",sec)
+        } else {
+            self.text = String(min) + ":" + String(format: "%02d",sec)
+        }
+    }
+    
 }
 
 
