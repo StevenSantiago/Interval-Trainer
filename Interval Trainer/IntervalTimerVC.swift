@@ -11,7 +11,7 @@ import AVFoundation
 import CoreData
 
 
-class IntervalTimerVC: UIViewController {
+class IntervalTimerVC: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet var TimerBackView: UIView!
     @IBOutlet weak var timerLbl: UILabel!
@@ -43,6 +43,7 @@ class IntervalTimerVC: UIViewController {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
         navigationController!.navigationBar.isHidden = false
+        navigationController?.delegate = self
         if(defaultTimer == true){
             setDefaultTimer()
         } else{
@@ -67,6 +68,12 @@ class IntervalTimerVC: UIViewController {
         }
         catch{
             print("error")
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let destination = viewController as? CreateIntervalTrainerVC {
+            destination.createBtn.setTitle("SAVE", for: .normal)
         }
     }
 
