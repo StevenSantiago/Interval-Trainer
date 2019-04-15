@@ -60,7 +60,8 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? IntervalTimerVC {
             destination.intervalTimer = activeClock
-            save()// move to startTimer function?
+            save()
+            destination.iT = iTimer
         }
         
     }
@@ -158,6 +159,7 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             oneDefaultTimer()
         }
         let intervalT = IntervalTimer(context: managedContext)
+        iTimer = intervalT
         intervalT.activeTime = Int32(activeClock.activeTime)
         intervalT.name = activeClock.name
         intervalT.restTime = Int32(activeClock.restTime)

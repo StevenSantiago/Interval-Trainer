@@ -21,7 +21,7 @@ class IntervalTimerVC: UIViewController, UINavigationControllerDelegate {
     
     //Default Timer used if no default timer is provided for quickstart
     var intervalTimer = Timers(name:"Empty", restTime: 12, activeTime: 45, sets: 10)
-    
+    var iT: IntervalTimer?
     
     var HMS:(Int,Int,Int) = (0,0,0)
     var active = true
@@ -74,6 +74,13 @@ class IntervalTimerVC: UIViewController, UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if let destination = viewController as? CreateIntervalTrainerVC {
             destination.createBtn.setTitle("SAVE", for: .normal)
+            destination.tName = intervalTimer.name
+            destination.tSets = intervalTimer.sets
+            destination.activeClock.activeTime = intervalTimer.activeTime
+            destination.activeClock.restTime = intervalTimer.restTime
+            destination.defaultTimer = defaultTimer
+            destination.editingTimer = true
+            destination.iTimer = iT
         }
     }
 
