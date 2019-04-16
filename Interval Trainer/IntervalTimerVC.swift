@@ -137,7 +137,6 @@ class IntervalTimerVC: UIViewController, UINavigationControllerDelegate {
     
     func updateTimerLbl(){
         HMS = intervalTimer.convertToHoursMinsSeconds(Seconds: currentRunTime)
-//        timerLbl.text = String(HMS.0) + ":" + String(HMS.1) + ":" + String(format: "%02d",HMS.2)
         if let display = timerLbl as? DisplayTimer {
             display.formatDisplay(hour: HMS.0, min: HMS.1, sec: HMS.2)
         }

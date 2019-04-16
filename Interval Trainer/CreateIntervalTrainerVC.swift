@@ -99,7 +99,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(scrollView.contentSize.height)
         switch component {
         case 0:
             if pickerView.tag == 1{
@@ -192,7 +191,6 @@ class CreateIntervalTrainerVC: UIViewController,UIPickerViewDelegate,UIPickerVie
             for index in 0...fetchResults.count-1 {
                 let managedObject = fetchResults[index]
                 managedObject.setValue(false, forKey: "isDefault")
-                print("Id for this object is:  \(managedObject.objectID.uriRepresentation().lastPathComponent)")
                 appDelegate.saveContext()
             }
             }

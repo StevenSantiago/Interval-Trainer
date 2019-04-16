@@ -99,7 +99,6 @@ class SavedIntervalTrainersVC: UIViewController, UITableViewDataSource, UITableV
         }
 
         let editAction = UITableViewRowAction(style: .normal, title: "EDIT") { (rowAction, indexPath) in
-            print("Editing timer")
             let item = self.intervalTimers[indexPath.row]
             let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateIntervalTrainerVC") as! CreateIntervalTrainerVC
             secondViewController.tName = item.name!
