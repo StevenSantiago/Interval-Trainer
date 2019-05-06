@@ -96,8 +96,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orc-AP-a5W" customClass="DisplayTimer" customModule="Interval_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="-70" y="312.5" width="515" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="orc-AP-a5W" customClass="DisplayTimer" customModule="Interval_Trainer" customModuleProvider="target">
+                                <rect key="frame" x="5" y="313" width="365" height="41.5"/>
                                 <fontDescription key="fontDescription" name="Laserian" family="Laserian" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,11 +130,12 @@
                             <constraint firstItem="ppV-QA-TYF" firstAttribute="top" secondItem="Vfe-an-7na" secondAttribute="top" constant="5" id="0va-xC-wGM"/>
                             <constraint firstItem="Vfe-an-7na" firstAttribute="bottom" secondItem="xBN-Gv-q6s" secondAttribute="bottom" constant="30" id="4Wa-O4-SP2"/>
                             <constraint firstItem="xBN-Gv-q6s" firstAttribute="centerX" secondItem="Vfe-an-7na" secondAttribute="centerX" id="97X-HI-fmy"/>
-                            <constraint firstItem="orc-AP-a5W" firstAttribute="centerX" secondItem="Vfe-an-7na" secondAttribute="centerX" id="END-Ww-keI"/>
                             <constraint firstItem="orc-AP-a5W" firstAttribute="centerY" secondItem="Vc5-9R-ds8" secondAttribute="centerY" id="GAL-k5-bM7"/>
                             <constraint firstItem="Vfe-an-7na" firstAttribute="bottom" secondItem="xBN-Gv-q6s" secondAttribute="bottom" constant="80" id="Jcu-Om-QhS"/>
                             <constraint firstItem="xBN-Gv-q6s" firstAttribute="top" secondItem="oRO-I0-xA4" secondAttribute="bottom" constant="40" id="KK5-fX-Dab"/>
+                            <constraint firstItem="orc-AP-a5W" firstAttribute="leading" secondItem="Vc5-9R-ds8" secondAttribute="leading" constant="5" id="YaG-4M-RqV"/>
                             <constraint firstItem="ppV-QA-TYF" firstAttribute="centerX" secondItem="Vfe-an-7na" secondAttribute="centerX" id="eD4-2w-G0h"/>
+                            <constraint firstAttribute="trailing" secondItem="orc-AP-a5W" secondAttribute="trailing" constant="5" id="oXO-mM-eJl"/>
                             <constraint firstItem="xBN-Gv-q6s" firstAttribute="top" secondItem="oRO-I0-xA4" secondAttribute="bottom" constant="80" id="vhk-t5-Jwa"/>
                             <constraint firstItem="oRO-I0-xA4" firstAttribute="centerX" secondItem="Vfe-an-7na" secondAttribute="centerX" id="xG3-uL-rri"/>
                         </constraints>

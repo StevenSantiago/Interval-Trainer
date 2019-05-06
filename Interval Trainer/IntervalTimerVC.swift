@@ -51,7 +51,6 @@ class IntervalTimerVC: UIViewController, UINavigationControllerDelegate {
         }
         customLabel = timerLbl as! DisplayTimer
         updateTimerLbl()
-        timerLbl.adjustsFontSizeToFitWidth = false
         
         numberOfSets.text = String(intervalTimer.sets)
         StopBtn.isHidden = true
